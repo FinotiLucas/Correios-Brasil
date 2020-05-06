@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "iconv-lite": "^0.5.1",
+    "node-fetch": "^2.6.0",
+    "xml-js": "^1.6.11"
   }
 }

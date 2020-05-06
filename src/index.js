@@ -1,39 +1,22 @@
-const fetch = require("node-fetch");
+const { CorreiosBrasil } = require("./classes/cep");
 
-const str = "21.aaSS@- +$#¨%¨*¨&(dsdsdfdsf 770-200";
+let args = {
+  sCepOrigem: "81200100",
+  sCepDestino: "21770200",
+  nVlPeso: "1",
+  nCdFormato: "1",
+  nVlComprimento: "20",
+  nVlAltura: "20",
+  nVlLargura: "20",
+  sCdMaoPropria: "n",
+  nVlValorDeclarado: "0",
+  sCdAvisoRecebimento: "n",
+  nCdServico: "04014",
+  nVlDiametro: "0",
+};
 
-function cep(cep) {
-  function sanitization(cep) {
-    const result = cep.replace(/[^0-9]|[/ /]/g, "");
-    isValid = validation(result);
-    try {
-      if (isValid) {
-        return result;
-      }
-    } catch (err) {
-      console.error();
-    }
-  }
+cep = new CorreiosBrasil(args);
 
-  function validation(sanitizedZip) {
-    if (sanitizedZip.length === 8) {
-      return true;
-    } else return false;
-  }
-
-  sanitizedZip = sanitization(cep);
-
-  //nresult = https://viacep.com.br/ws/01001000/json/?callback=callback_name
-
-  return sanitizedZip;
-}
-
-const url = `https://viacep.com.br/ws/${cep(str)}/json`;
-
-fetch(url)
-  .then((resp) => resp.json()) // Transform the data into json
-  .then(function (data) {
-    console.log(data);
-  });
-
-const data = console.log(fetch(url));
+cep.calcularPreço().then((response) => {
+  console.log(response.json);
+});
