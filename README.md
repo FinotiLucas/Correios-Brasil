@@ -1,9 +1,10 @@
 
+
 # Correios Brasil
   
 
 <h4 align="center">
-<img src="./assets/README.gif"/><br>
+<img src="https://media.giphy.com/media/eRIrROHUPJvgs/giphy.gif"/><br>
  <b>Descomplicando os Correios!</b> 🦸‍♂️
 </h4>
 <p align="center">
