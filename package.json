@@ -1,14 +1,25 @@
 {
-  "name": "cep-brasil",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "correios-brasil",
+  "version": "1.0.1",
+  "description": "Implementação com base na API dos Correios e do IBGE para encontrar informações sobre um CEP ou ver os prazos, valores e restrições de uma entrega",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "entrega",
+    "preço",
+    "correio",
+    "frete",
+    "cep",
+    "fetch"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FinotiLucas/Correios-Brasil"
+  },
+  "author": "Lucas Lima Finoti <lucas.finoti@protonmail.com>",
+  "license": "MIT",
   "dependencies": {
     "iconv-lite": "^0.5.1",
     "node-fetch": "^2.6.0",
