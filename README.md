@@ -18,7 +18,7 @@
 
 <a  href="https://lucasfinoti.netlify.app">
 
-<img  alt="Made by Lucas Finoti"  src="https://img.shields.io/badge/made%20by-LucasFinoti-red">
+<img  alt="Made by Rocketseat"  src="https://img.shields.io/badge/made%20by-LucasFinoti-red">
 
 </a>
 
@@ -28,7 +28,7 @@
 
 <p  align="center">
 
-[![NPM](https://nodei.co/npm/node-correios.png?mini=true)](https://nodei.co/npm/node-correios/)
+[![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
 
 </p>
 
