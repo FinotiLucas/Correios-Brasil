@@ -51,37 +51,18 @@ npm install correios-brasil --save
   
 
 ``` javascript
-
-  
-
 const { CorreiosBrasil } = require("correios-brasil");
 
-  
-
-let  args = {
-
-// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
-
-sCepDestino:  "21770200"
-
+let args = {
+  // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
+  sCepDestino: "21770200",
 };
 
-  
+cep = new CorreiosBrasil(args);
 
-cep = new  CorreiosBrasil(args);
-
-  
-
-cep.consultarCEP()
-
-.then((response) => {
-
-console.log(response.json);
-
+cep.consultarCEP().then((response) => {
+  console.log(response.json);
 });
-
-  
-
 ```
 
   
@@ -95,25 +76,15 @@ Com sucesso:
 ``` javascript
 
 {
-
-cep: '21770-200',
-
-logradouro: 'Rua Claudino Barata',
-
-complemento: '',
-
-bairro: 'Realengo',
-
-localidade: 'Rio de Janeiro',
-
-uf: 'RJ',
-
-unidade: '',
-
-ibge: '3304557',
-
-gia: ''
-
+    cep: '21770-200',
+    logradouro: 'Rua Claudino Barata',
+    complemento: '',
+    bairro: 'Realengo',
+    localidade: 'Rio de Janeiro',
+    uf: 'RJ',
+    unidade: '',
+    ibge: '3304557',
+    gia: ''
 }
 
 ```
@@ -125,57 +96,44 @@ gia: ''
   
 
 ``` javascript
-
-  
-
 const { CorreiosBrasil } = require("correios-brasil");
 
-  
+let args = {
+  // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
 
-let  args = {
+  sCepOrigem: "81200100",
 
-// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
+  sCepDestino: "21770200",
 
-sCepOrigem:  "81200100",
+  nVlPeso: "1",
 
-sCepDestino:  "21770200",
+  nCdFormato: "1",
 
-nVlPeso:  "1",
+  nVlComprimento: "20",
 
-nCdFormato:  "1",
+  nVlAltura: "20",
 
-nVlComprimento:  "20",
+  nVlLargura: "20",
 
-nVlAltura:  "20",
+  sCdMaoPropria: "n",
 
-nVlLargura:  "20",
+  nVlValorDeclarado: "0",
 
-sCdMaoPropria:  "n",
+  sCdAvisoRecebimento: "n",
 
-nVlValorDeclarado:  "0",
+  nCdServico: "04014",
 
-sCdAvisoRecebimento:  "n",
-
-nCdServico:  "04014",
-
-nVlDiametro:  "0",
-
+  nVlDiametro: "0",
 };
 
-  
+correios = new CorreiosBrasil(args);
 
-cep = new  CorreiosBrasil(args);
+correios
+  .calcularPreço()
 
-  
-
-cep.calcularPreço()
-
-.then((response) => {
-
-console.log(response.json);
-
-});
-
+  .then((response) => {
+    console.log(response.json);
+  });
 ```
 
   
@@ -188,70 +146,22 @@ Com sucesso:
 
 {
 
-Codigo: { _text: '04014' },
-
-  
-
-Valor: { _text: '53,10' },
-
-  
-
-PrazoEntrega: { _text: '13' },
-
-  
-
-ValorSemAdicionais: { _text: '53,10' },
-
-  
-
-ValorMaoPropria: { _text: '0,00' },
-
-  
-
-ValorAvisoRecebimento: { _text: '0,00' },
-
-  
-
-ValorValorDeclarado: { _text: '0,00' },
-
-  
-
-EntregaDomiciliar: { _text: 'S' },
-
-  
-
-EntregaSabado: { _text: 'S' },
-
-  
-
-obsFim: {
-
-  
-
-_text: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-
-  
-
-},
-
-  
-
-Erro: { _text: '011' },
-
-  
-
-MsgErro: {
-
-  
-
-_cdata: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-
-  
-
-}
-
-  
-
+    Codigo: { _text: '04014' },
+    Valor: { _text: '53,10' },
+    PrazoEntrega: { _text: '13' },
+    ValorSemAdicionais: { _text: '53,10' },
+    ValorMaoPropria: { _text: '0,00' },
+    ValorAvisoRecebimento: { _text: '0,00' },
+    ValorValorDeclarado: { _text: '0,00' },
+    EntregaDomiciliar: { _text: 'S' },
+    EntregaSabado: { _text: 'S' },
+    obsFim: {
+        _text: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+    },
+    Erro: { _text: '011' },
+    MsgErro: {
+        _cdata: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+    }
 }
 
 ```
