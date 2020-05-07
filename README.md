@@ -1,40 +1,74 @@
 
-  
-  
-
 # Correios Brasil
 
   
 
 <h4  align="center">
 
+  
+
 <img  src="https://media.giphy.com/media/eRIrROHUPJvgs/giphy.gif"/><br>
+
+  
 
 <b>Descomplicando os Correios!</b> 🦸‍♂️
 
+  
+
 </h4>
 
+  
+
 <p  align="center">
+
+  
 
 <a  href="https://lucasfinoti.netlify.app">
 
+  
+
 <img  alt="Made by Rocketseat"  src="https://img.shields.io/badge/made%20by-LucasFinoti-red">
+
+  
 
 </a>
 
+  
+
 <img  alt="License"  src="https://img.shields.io/badge/license-MIT-red">
 
-</p>
-
-<p  align="center">
-
-[![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
+  
 
 </p>
 
   
 
+<p  align="center">
+
+  
+
+[![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
+
+  
+
+</p>
+
+  
+
+  
+
 <br>
+
+  
+
+# O que é o Correios Brasil ?
+
+  
+
+O Correios Brasil é uma biblioteca que aparece como alternativa para juntar em um único lugar todas as ferramentas necessárias para você trabalhar com os correios. Otimizar sua loja virtual ou seu serviço com um único pacote capaz de te entregar exatamente o que você precisa !
+
+  
+  
 
 ## Como instalar
 
@@ -46,24 +80,35 @@ npm install correios-brasil --save
 
 ```
 
+  
+
 ## Como consultar um CEP
 
   
 
+  
+
 ``` javascript
+
 const { CorreiosBrasil } = require("correios-brasil");
 
-let args = {
-  // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
-  sCepDestino: "21770200",
+  
+
+let  args = {
+	// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
+
+	sCepDestino:  "21770200",
 };
 
-cep = new CorreiosBrasil(args);
+cep = new  CorreiosBrasil(args);
 
 cep.consultarCEP().then((response) => {
-  console.log(response.json);
+	console.log(response.json);
 });
+
 ```
+
+  
 
   
 
@@ -71,23 +116,39 @@ cep.consultarCEP().then((response) => {
 
   
 
+  
+
 Com sucesso:
+
+  
 
 ``` javascript
 
 {
-    cep: '21770-200',
-    logradouro: 'Rua Claudino Barata',
-    complemento: '',
-    bairro: 'Realengo',
-    localidade: 'Rio de Janeiro',
-    uf: 'RJ',
-    unidade: '',
-    ibge: '3304557',
-    gia: ''
+
+cep: '21770-200',
+
+logradouro: 'Rua Claudino Barata',
+
+complemento: '',
+
+bairro: 'Realengo',
+
+localidade: 'Rio de Janeiro',
+
+uf: 'RJ',
+
+unidade: '',
+
+ibge: '3304557',
+
+gia: ''
+
 }
 
 ```
+
+  
 
   
 
@@ -95,50 +156,145 @@ Com sucesso:
 
   
 
+  
+
 ``` javascript
+
 const { CorreiosBrasil } = require("correios-brasil");
 
-let args = {
-  // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200 e etc),
+  
 
-  sCepOrigem: "81200100",
+let  args = {
 
-  sCepDestino: "21770200",
+// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
 
-  nVlPeso: "1",
+sCepOrigem:  "81200100",
 
-  nCdFormato: "1",
+sCepDestino:  "21770200",
 
-  nVlComprimento: "20",
+nVlPeso:  "1",
 
-  nVlAltura: "20",
+nCdFormato:  "1",
 
-  nVlLargura: "20",
+nVlComprimento:  "20",
 
-  sCdMaoPropria: "n",
+nVlAltura:  "20",
 
-  nVlValorDeclarado: "0",
+nVlLargura:  "20",
 
-  sCdAvisoRecebimento: "n",
+sCdMaoPropria:  "n",
 
-  nCdServico: "04014",
+nVlValorDeclarado:  "0",
 
-  nVlDiametro: "0",
+sCdAvisoRecebimento:  "n",
+
+nCdServico:  "04014",
+
+nVlDiametro:  "0",
+
 };
 
-correios = new CorreiosBrasil(args);
+  
+
+correios = new  CorreiosBrasil(args);
+
+  
 
 correios
-  .calcularPreço()
 
-  .then((response) => {
-    console.log(response.json);
-  });
+.calcularPreço()
+
+  
+
+.then((response) => {
+
+console.log(response.json);
+
+});
+
+```
+
+  
+
+  
+
+### Resposta
+
+  
+
+Com sucesso:
+
+  
+
+``` javascript
+
+{
+
+Codigo: '04014',
+
+Valor: '53,10',
+
+PrazoEntrega: '13',
+
+ValorSemAdicionais: '53,10',
+
+ValorMaoPropria: '0,00',
+
+ValorAvisoRecebimento: '0,00',
+
+ValorValorDeclarado: '0,00',
+
+EntregaDomiciliar: 'S',
+
+EntregaSabado: 'S',
+
+obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
+
+Erro: '011',
+
+MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+
+}
+
+  
+
+```
+
+  
+
+## Como rastrear uma encomenda (EM DESENVOLVIMENTO)
+
+``` javascript
+
+const { CorreiosBrasil } = require("./classes/correios");
+
+  
+
+let  args = {
+
+codRastreio: ["LB334490757SE"], //futuramente serão aceitas mais de uma encomenda por vez !
+
+};
+
+  
+
+correios = new  CorreiosBrasil(args);
+
+  
+
+correios.rastrearEncomendas().then((response) => {
+
+console.log(response.json);
+
+});
+
 ```
 
   
 
 ### Resposta
+
+  
 
 Com sucesso:
 
@@ -146,39 +302,43 @@ Com sucesso:
 
 {
 
-    Codigo: { _text: '04014' },
-    Valor: { _text: '53,10' },
-    PrazoEntrega: { _text: '13' },
-    ValorSemAdicionais: { _text: '53,10' },
-    ValorMaoPropria: { _text: '0,00' },
-    ValorAvisoRecebimento: { _text: '0,00' },
-    ValorValorDeclarado: { _text: '0,00' },
-    EntregaDomiciliar: { _text: 'S' },
-    EntregaSabado: { _text: 'S' },
-    obsFim: {
-        _text: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-    },
-    Erro: { _text: '011' },
-    MsgErro: {
-        _cdata: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-    }
+tipo: 'PO',
+
+status: '01',
+
+data: '20/03/2020',
+
+hora: '10:25',
+
+descricao: 'Objeto postado',
+
+local: 'SUECIA',
+
+codigo: '00752000'
+
 }
 
 ```
-
-  
 
 # Argumentos para a consulta da API
 
   
 
+-  ``codRastreio`` - **Array[String]**
+
+Array com os códigos de rastreio
+
+  
   
 
 -  ``nCdServico`` - **String**
 
   
+  
 
 Código do serviço:
+
+  
 
   
 
@@ -186,7 +346,11 @@ Código do serviço:
 
   
 
+  
+
 - 04065 = SEDEX à vista pagamento na entrega
+
+  
 
   
 
@@ -194,7 +358,11 @@ Código do serviço:
 
   
 
+  
+
 - 04707 = PAC à vista pagamento na entrega
+
+  
 
   
 
@@ -202,11 +370,17 @@ Código do serviço:
 
   
 
+  
+
 - 40215 = SEDEX 10 (à vista e a faturar)
 
   
 
+  
+
 - 40290 = SEDEX Hoje Varejo
+
+  
 
   
 
@@ -218,7 +392,11 @@ Código do serviço:
 
   
 
+  
+
 CEP de Origem. Exemplo: **05311900**
+
+  
 
   
 
@@ -230,7 +408,11 @@ CEP de Origem. Exemplo: **05311900**
 
   
 
+  
+
 CEP de Destino
+
+  
 
   
 
@@ -242,7 +424,11 @@ CEP de Destino
 
   
 
+  
+
 Peso da encomenda, incluindo sua embalagem. O peso deve ser informado em quilogramas. Se o formato for Envelope, o valor máximo permitido será 1 kg
+
+  
 
   
 
@@ -254,7 +440,11 @@ Peso da encomenda, incluindo sua embalagem. O peso deve ser informado em quilogr
 
   
 
+  
+
 Formato da encomenda (incluindo embalagem)
+
+  
 
   
 
@@ -262,11 +452,17 @@ Formato da encomenda (incluindo embalagem)
 
   
 
+  
+
 - 2 = Formato rolo/prisma
 
   
 
+  
+
 - 3 = Envelope
+
+  
 
   
 
@@ -278,7 +474,11 @@ Formato da encomenda (incluindo embalagem)
 
   
 
+  
+
 Comprimento da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -290,7 +490,11 @@ Comprimento da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Altura da encomenda (incluindo embalagem), em centímetros. Se o formato for envelope, informar zero (0)
+
+  
 
   
 
@@ -302,7 +506,11 @@ Altura da encomenda (incluindo embalagem), em centímetros. Se o formato for env
 
   
 
+  
+
 Largura da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -314,7 +522,11 @@ Largura da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Diâmetro da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -324,7 +536,11 @@ Diâmetro da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional mão própria
+
+  
 
   
 
@@ -332,7 +548,11 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 - N = não **PADRÃO**
+
+  
 
   
 
@@ -342,7 +562,11 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional valor declarado. Neste campo deve ser apresentado o valor declarado desejado, em Reais
+
+  
 
   
 
@@ -352,7 +576,11 @@ Indica se a encomenda será entregue com o serviço adicional valor declarado. N
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional mão própria
+
+  
 
   
 
@@ -360,12 +588,24 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 - N = não **PADRÃO**
 
   
+###  O que está em desenvolvimento ?
+
+- Realizar a limpeza e reorganização dos códigos  🔴
+- Realizar a reorganização arquivos  🔴
+- Terminar de desenvolver o rastreio de encomendas  🟡.
+- Atualizar o package.json e o README.md 🟢.
+ 
+
   
 
 ### 👍 Contribuição
+
+  
 
   
 
@@ -373,22 +613,37 @@ Want to contribute? Great!
 
   
 
+  
+
 1. Fork it
+
+  
 
 2. Create your feature branch (git checkout -b my-new-feature)
 
+  
+
 3. Commit your changes (git commit -m 'Add some feature')
 
+  
+
 4. Push to the branch (git push origin my-new-feature)
+
+  
 
 5. Create new Pull Request
 
   
+
   
 
 ### License
 
+  
+
 ----
+
+  
 
   
 
@@ -396,11 +651,17 @@ MIT License
 
   
 
+  
+
 Copyright (c) 2020 Lucas Finoti
 
   
 
+  
+
 [See more about the license][LICENSE]
+
+  
 
   
 

@@ -1,11 +1,15 @@
 const fetch = require("node-fetch");
 var iconv = require("iconv-lite");
 const convert = require("xml-js");
+const models = require("../models/response.model");
+const {fetchFromAPI} = require("./rastreio");
+
 //
 class CorreiosBrasil {
   constructor(args) {
     /**
      *
+     * @param {Array[String]} codRastreio,
      * @param {string} sCepOrigem,
      * @param {string} sCepDestino,
      * @param {string} nVlPeso,
@@ -23,15 +27,18 @@ class CorreiosBrasil {
     this.args = args;
   }
 
+  rastrearEncomendas() {
+    return fetchFromAPI(this.args.codRastreio);
+  }
+
   consultarCEP() {
     /**
-     *
+     * Função responsável por realizar a consulta de um CEP já higienizado e retornar um Json com a resposta
      */
-    const url = `https://viacep.com.br/ws/${this.sanitization(
-      this.args.sCepDestino
-    )}/json`;
+    const cep = this.sanitization(this.args.sCepDestino);
+    const url = `https://viacep.com.br/ws/${cep}/json`;
+
     const response = fetch(url, {
-      //mode: "no-cors",
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -46,8 +53,7 @@ class CorreiosBrasil {
 
     function fetchHandler(response) {
       /**
-       *
-       *
+       * Lida com os possíveis erros.
        */
 
       if (response.ok) {
@@ -74,28 +80,16 @@ class CorreiosBrasil {
           });
       }
     }
-
     return response;
   }
 
   calcularPreço() {
     /**
-     *
+     * Função responsável por retornar um json com todas as informações referentes ao frete de uma encomenda
      */
-
-    const url = `http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?sCepOrigem=${this.sanitization(
-      this.args.sCepOrigem
-    )}&sCepDestino=${this.sanitization(this.args.sCepDestino)}&nVlPeso=${
-      this.args.nVlPeso
-    }&nCdFormato=${this.args.nCdFormato}&nVlComprimento=${
-      this.args.nVlComprimento
-    }&nVlAltura=${this.args.nVlAltura}&nVlLargura=${
-      this.args.nVlLargura
-    }&sCdMaoPropria=${this.args.sCdMaoPropria}&nVlValorDeclarado=${
-      this.args.nVlValorDeclarado
-    }&sCdAvisoRecebimento=${this.args.sCdAvisoRecebimento}&nCdServico=${
-      this.args.nCdServico
-    }&nVlDiametro=${this.args.nVlDiametro}&StrRetorno=xml&nIndicaCalculo=3`;
+    const sCepOrigem = this.sanitization(this.args.sCepOrigem);
+    const sCepDestino = this.sanitization(this.args.sCepDestino);
+    const url = `http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?sCepOrigem=${sCepOrigem}&sCepDestino=${sCepDestino}&nVlPeso=${this.args.nVlPeso}&nCdFormato=${this.args.nCdFormato}&nVlComprimento=${this.args.nVlComprimento}&nVlAltura=${this.args.nVlAltura}&nVlLargura=${this.args.nVlLargura}&sCdMaoPropria=${this.args.sCdMaoPropria}&nVlValorDeclarado=${this.args.nVlValorDeclarado}&sCdAvisoRecebimento=${this.args.sCdAvisoRecebimento}&nCdServico=${this.args.nCdServico}&nVlDiametro=${this.args.nVlDiametro}&StrRetorno=xml&nIndicaCalculo=3`;
 
     let dataAsJson = {};
 
@@ -103,10 +97,8 @@ class CorreiosBrasil {
 
     function fetchHandler(response) {
       /**
-       *
-       *
+       * Lida com os possíveis erros.
        */
-
       if (response.ok) {
         return response
           .arrayBuffer()
@@ -117,12 +109,14 @@ class CorreiosBrasil {
             dataAsJson = JSON.parse(
               convert.xml2json(str, { compact: true, spaces: 4 })
             );
+            const data = models.calcularPreçoModel(
+              dataAsJson.Servicos.cServico
+            );
             return Promise.resolve({
-              json: dataAsJson.Servicos.cServico,
+              json: data,
               response: response,
             });
           })
-
           .catch((err) => {
             // the status was ok but there is no json body
             return Promise.resolve({ response: response });
@@ -146,7 +140,7 @@ class CorreiosBrasil {
 
   sanitization(cep) {
     /**
-     *
+     * Função responsável por realizar a higienização dos CEPS, deixando apenas caracteres válidos.
      */
     const result = cep.replace(/[^0-9]|[/ /]/g, "");
     try {
@@ -160,7 +154,7 @@ class CorreiosBrasil {
 
   validation(sanitizedZip) {
     /**
-     *
+     * Verifica se o cep possui a quantidade correta de digitos
      */
     if (sanitizedZip.length === 8) {
       return true;
