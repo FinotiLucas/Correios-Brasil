@@ -53,26 +53,17 @@
 
 </p>
 
-  
-
-  
 
 <br>
-
-  
+ 
 
 # O que é o Correios Brasil ?
 
-  
-
 O Correios Brasil é uma biblioteca que aparece como alternativa para juntar em um único lugar todas as ferramentas necessárias para você trabalhar com os correios. Otimizar sua loja virtual ou seu serviço com um único pacote capaz de te entregar exatamente o que você precisa !
 
-  
-  
 
 ## Como instalar
 
-  
 
 ```
 
@@ -80,244 +71,137 @@ npm install correios-brasil --save
 
 ```
 
-  
-
 ## Como consultar um CEP
-
-  
-
-  
+ 
 
 ``` javascript
 
-const { CorreiosBrasil } = require("correios-brasil");
+const { CepBrasil } = require("correios-brasil");
 
-  
+const cep = '21770200'
 
-let  args = {
-	// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
+correios = new CepBrasil(cep);
 
-	sCepDestino:  "21770200",
-};
+correios.consultarCEP().then((response) => {
 
-cep = new  CorreiosBrasil(args);
+    console.log(response.data);
 
-cep.consultarCEP().then((response) => {
-	console.log(response.json);
 });
 
 ```
-
   
-
-  
-
 ### Resposta
-
-  
-
-  
 
 Com sucesso:
 
-  
-
 ``` javascript
-
 {
 
-cep: '21770-200',
-
-logradouro: 'Rua Claudino Barata',
-
-complemento: '',
-
-bairro: 'Realengo',
-
-localidade: 'Rio de Janeiro',
-
-uf: 'RJ',
-
-unidade: '',
-
-ibge: '3304557',
-
-gia: ''
+	cep: '21770-200',
+	logradouro: 'Rua Claudino Barata',
+	complemento: '',
+	bairro: 'Realengo',
+	localidade: 'Rio de Janeiro',
+	uf: 'RJ',
+	unidade: '',
+	ibge: '3304557',
+	gia: ''
 
 }
-
 ```
-
-  
-
-  
 
 ## Como consultar o preço e as demais informações de uma encomenda
 
-  
-
-  
-
 ``` javascript
 
 const { CorreiosBrasil } = require("correios-brasil");
 
-  
-
-let  args = {
-
-// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
-
-sCepOrigem:  "81200100",
-
-sCepDestino:  "21770200",
-
-nVlPeso:  "1",
-
-nCdFormato:  "1",
-
-nVlComprimento:  "20",
-
-nVlAltura:  "20",
-
-nVlLargura:  "20",
-
-sCdMaoPropria:  "n",
-
-nVlValorDeclarado:  "0",
-
-sCdAvisoRecebimento:  "n",
-
-nCdServico:  "04014",
-
-nVlDiametro:  "0",
+let args = {
+	// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),    
+	sCepOrigem: "81200100",
+    sCepDestino: "21770200",
+    nVlPeso: "1",
+    nCdFormato: "1",
+    nVlComprimento: "20",
+    nVlAltura: "20",
+    nVlLargura: "20",
+    nCdServico: "04014",
+    nVlDiametro: "0",
 
 };
 
-  
+correios = new CorreiosBrasil(args);
 
-correios = new  CorreiosBrasil(args);
-
-  
-
-correios
-
-.calcularPreço()
-
-  
-
-.then((response) => {
-
-console.log(response.json);
-
-});
+correios.calcularPreço()
+    .then((response) => {
+        console.log(response.data);
+    });
 
 ```
-
-  
-
   
 
 ### Resposta
-
   
 
-Com sucesso:
-
-  
+Com sucesso: 
 
 ``` javascript
-
 {
-
-Codigo: '04014',
-
-Valor: '53,10',
-
-PrazoEntrega: '13',
-
-ValorSemAdicionais: '53,10',
-
-ValorMaoPropria: '0,00',
-
-ValorAvisoRecebimento: '0,00',
-
-ValorValorDeclarado: '0,00',
-
-EntregaDomiciliar: 'S',
-
-EntregaSabado: 'S',
-
-obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
-
-Erro: '011',
-
-MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-
-}
-
-  
-
+	Codigo: '04014',
+	Valor: '53,10',
+	PrazoEntrega: '13',
+	ValorSemAdicionais: '53,10',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	EntregaDomiciliar: 'S',
+	EntregaSabado: 'S',
+	obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
+	Erro: '011',
+	MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+} 
 ```
 
-  
 
 ## Como rastrear uma encomenda (EM DESENVOLVIMENTO)
 
 ``` javascript
 
-const { CorreiosBrasil } = require("./classes/correios");
+const { RastreioBrasil } = require('correios-brasil')
 
-  
 
-let  args = {
+let codRastreio = ["LB334490757SE"]
 
-codRastreio: ["LB334490757SE"], //futuramente serão aceitas mais de uma encomenda por vez !
-
-};
-
-  
-
-correios = new  CorreiosBrasil(args);
-
-  
+correios = new RastreioBrasil(codRastreio);
 
 correios.rastrearEncomendas().then((response) => {
-
-console.log(response.json);
-
+    console.log(response.data);
 });
 
 ```
 
-  
-
 ### Resposta
-
-  
 
 Com sucesso:
 
 ``` javascript
-
 {
-
-tipo: 'PO',
-
-status: '01',
-
-data: '20/03/2020',
-
-hora: '10:25',
-
-descricao: 'Objeto postado',
-
-local: 'SUECIA',
-
-codigo: '00752000'
-
+  numero: 'PW639018542BR',
+  sigla: 'PW',
+  nome: 'ETIQUETA LOGICA PAC - PW',
+  categoria: 'ENCOMENDA PAC',
+  evento: [
+    {
+      tipo: 'PO',
+      status: '01',
+      data: '14/04/2020',
+      hora: '14:28',
+      descricao: 'Objeto postado',
+      local: 'AGF VILA PREL',
+      codigo: '05777970'
+    }
+  ]
 }
-
 ```
 
 # Argumentos para a consulta da API
@@ -595,8 +479,9 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
   
 ###  O que está em desenvolvimento ?
 
-- Realizar a limpeza e reorganização dos códigos  🔴
+- Realizar a limpeza e reestruturação dos códigos  🔴
 - Realizar a reorganização arquivos  🔴
+- Padronizar as respostas dos erros  🔴
 - Terminar de desenvolver o rastreio de encomendas  🟡.
 - Atualizar o package.json e o README.md 🟢.
  

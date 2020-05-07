@@ -1,18 +1,30 @@
 {
   "name": "correios-brasil",
   "version": "1.0.1",
-  "description": "Implementação com base na API dos Correios e do IBGE para encontrar informações sobre um CEP ou ver os prazos, valores e restrições de uma entrega",
-  "main": "src/index.js",
+  "description": " Módulo para encontrar informações sobre um CEP, calcular os prazos, valores e restrições de uma entrega e realizar o rastreio de encomendas nacionais ou internacionais ",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "entrega",
+    "entregas",
     "preço",
+    "prazo",
     "correio",
+    "correios",
     "frete",
+    "rastreio",
+    "rastrear",
+    "encomendas",
+    "encomenda",
     "cep",
-    "fetch"
+    "ibge",
+    "viacep",
+    "soap",
+    "xml",
+    "json",
+    "de"
   ],
   "repository": {
     "type": "git",
