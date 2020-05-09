@@ -191,15 +191,13 @@ correios.CalcPrecoPrazo().then((response) => {
   
   
 
-## Como rastrear uma encomenda (EM DESENVOLVIMENTO)
-Esse módulo se encontra em desenvolvimento e não está funcionando em alguns casos específicos.
-
+## Como rastrear uma encomenda
   
 
 ``` javascript
 const { RastreioBrasil } = require('correios-brasil')
 
-let  codRastreio = ["PW639018542BR"]
+let  codRastreio = "PW639018542BR"
 
 correios = new  RastreioBrasil(codRastreio);
 
@@ -214,19 +212,39 @@ correios.rastrearEncomendas().then((response) => {
 
 ``` javascript
 {
-  numero: 'PW639018542BR',
-  sigla: 'PW',
-  nome: 'ETIQUETA LOGICA PAC - PW',
-  categoria: 'ENCOMENDA PAC',
-  evento: [
+  events: [
     {
-    tipo:  'PO',
-    status:  '01',
-    data:  '14/04/2020',
-    hora:  '14:28',
-    descricao:  'Objeto postado',
-    local:  'AGF VILA PREL',
-    codigo:  '05777970'
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 15/04/2020 | Hora: 09:03',
+      origem: 'Origem: AGF VILA PREL - Sao Paulo / SP',
+      destino: 'Destino: CTE CAJAMAR - Cajamar / SP'
+    },
+    {
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 15/04/2020 | Hora: 22:18',
+      origem: 'Origem: CTE CAJAMAR - Cajamar / SP',
+      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'      
+    },
+    {
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 16/04/2020 | Hora: 10:04',
+      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',       
+      destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto saiu para entrega ao destinatário',
+      data: 'Data  : 17/04/2020 | Hora: 08:06',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto entregue ao destinatário',
+      data: 'Data  : 17/04/2020 | Hora: 11:12',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto entregue ao destinatário',
+      data: 'Data  : 17/04/2020 | Hora: 11:12',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
     }
   ]
 }
@@ -240,11 +258,11 @@ correios.rastrearEncomendas().then((response) => {
 
   
 
--  ``codRastreio`` - **Array[String]**
+-  ``codRastreio`` - **String**
 
   
 
-Array com os códigos de rastreio
+String com o código de rastreio
 
   
 
