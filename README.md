@@ -608,7 +608,7 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
-- Terminar de desenvolver o rastreio de encomendas 🟡.
+- Receber respostas de multiplas API's e retornar a primeira resposta 🟡.
 
 - Atualizar o package.json e o README.md 🟢.
 
