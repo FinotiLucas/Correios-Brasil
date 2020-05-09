@@ -1,5 +1,9 @@
 
+  
+
 # Correios Brasil
+
+  
 
   
 
@@ -7,11 +11,17 @@
 
   
 
-<img  src="https://media.giphy.com/media/eRIrROHUPJvgs/giphy.gif"/><br>
+  
+
+<img  src="https://media.giphy.com/media/nbX0ijnZwU33wY6Wwo/giphy.gif"/><br>
 
   
 
-<b>Descomplicando os Correios!</b> 🦸‍♂️
+  
+
+<b>Descomplicando os Correios!</b> 📬
+
+  
 
   
 
@@ -19,7 +29,11 @@
 
   
 
+  
+
 <p  align="center">
+
+  
 
   
 
@@ -27,7 +41,11 @@
 
   
 
-<img  alt="Made by Rocketseat"  src="https://img.shields.io/badge/made%20by-LucasFinoti-red">
+  
+
+<img  alt="Made by Lucas Finoti"  src="https://img.shields.io/badge/made%20by-LucasFinoti-red">
+
+  
 
   
 
@@ -35,11 +53,17 @@
 
   
 
+  
+
 <img  alt="License"  src="https://img.shields.io/badge/license-MIT-red">
 
   
 
+  
+
 </p>
+
+  
 
   
 
@@ -47,142 +71,146 @@
 
   
 
+  
+
 [![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
+
+  
 
   
 
 </p>
 
+  
+  
 
 <br>
- 
+
+  
 
 # O que é o Correios Brasil ?
 
-O Correios Brasil é uma biblioteca que aparece como alternativa para juntar em um único lugar todas as ferramentas necessárias para você trabalhar com os correios. Otimizar sua loja virtual ou seu serviço com um único pacote capaz de te entregar exatamente o que você precisa !
+  
+O Correios Brasil é uma ferramenta completa para quem procura facilidade para sua aplicação, otimizando sua loja virtual e seu serviço como: consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar seu rastreio tudo em um único lugar, agilizando assim os processos e demandas do dia a dia. Portanto, poupando seu tempo, por isso aproveite o pacote e não esqueça de deixar uma estrela no repositório, obrigado!
 
+  
+  
 
 ## Como instalar
 
+  
+  
 
 ```
-
 npm install correios-brasil --save
-
+ 
 ```
+
+  
 
 ## Como consultar um CEP
- 
+
+  
 
 ``` javascript
-
 const { CepBrasil } = require("correios-brasil");
 
-const cep = '21770200'
+  
+const  cep = '21770200'
 
-correios = new CepBrasil(cep);
+correios = new  CepBrasil(cep);
 
 correios.consultarCEP().then((response) => {
-
-    console.log(response.data);
-
+  console.log(response);
 });
-
 ```
-  
-### Resposta
 
-Com sucesso:
+### Resposta
 
 ``` javascript
 {
-
-	cep: '21770-200',
-	logradouro: 'Rua Claudino Barata',
-	complemento: '',
-	bairro: 'Realengo',
-	localidade: 'Rio de Janeiro',
-	uf: 'RJ',
-	unidade: '',
-	ibge: '3304557',
-	gia: ''
-
+  cep: '21770-200',
+  logradouro: 'Rua Claudino Barata',
+  complemento: '',
+  bairro: 'Realengo',
+  localidade: 'Rio de Janeiro',
+  uf: 'RJ',
+  unidade: '',
+  ibge: '3304557',
+  gia: '' 
 }
 ```
 
-## Como consultar o preço e as demais informações de uma encomenda
+## Como consultar o preço e o prazo de entrega de uma encomenda
+
 
 ``` javascript
+const { CorreiosBrasil } = require("correios-brasil"); 
 
-const { CorreiosBrasil } = require("correios-brasil");
-
-let args = {
-	// Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),    
-	sCepOrigem: "81200100",
-    sCepDestino: "21770200",
-    nVlPeso: "1",
-    nCdFormato: "1",
-    nVlComprimento: "20",
-    nVlAltura: "20",
-    nVlLargura: "20",
-    nCdServico: "04014",
-    nVlDiametro: "0",
-
+let  args = {
+  // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
+  sCepOrigem:  "81200100",
+  sCepDestino:  "21770200",
+  nVlPeso:  "1",
+  nCdFormato:  "1",
+  nVlComprimento:  "20",
+  nVlAltura:  "20",
+  nVlLargura:  "20",
+  nCdServico:  "04014",
+  nVlDiametro:  "0",
 };
 
-correios = new CorreiosBrasil(args);
+correios = new  CorreiosBrasil(args); 
 
-correios.calcularPreço()
-    .then((response) => {
-        console.log(response.data);
-    });
-
+correios.CalcPrecoPrazo().then((response) => {
+  console.log(response);
+});
 ```
+
   
 
 ### Resposta
-  
-
-Com sucesso: 
 
 ``` javascript
 {
-	Codigo: '04014',
-	Valor: '53,10',
-	PrazoEntrega: '13',
-	ValorSemAdicionais: '53,10',
-	ValorMaoPropria: '0,00',
-	ValorAvisoRecebimento: '0,00',
-	ValorValorDeclarado: '0,00',
-	EntregaDomiciliar: 'S',
-	EntregaSabado: 'S',
-	obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
-	Erro: '011',
-	MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
-} 
+  Codigo: '04014',
+  Valor: '53,10',
+  PrazoEntrega: '13',
+  ValorSemAdicionais: '53,10',
+  ValorMaoPropria: '0,00',
+  ValorAvisoRecebimento: '0,00',
+  ValorValorDeclarado: '0,00',
+  EntregaDomiciliar: 'S',
+  EntregaSabado: 'S',
+  obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
+  Erro: '011',
+  MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+}
 ```
 
+  
+  
 
 ## Como rastrear uma encomenda (EM DESENVOLVIMENTO)
+Esse módulo se encontra em desenvolvimento e não está funcionando em alguns casos específicos.
+
+  
 
 ``` javascript
-
 const { RastreioBrasil } = require('correios-brasil')
 
+let  codRastreio = ["PW639018542BR"]
 
-let codRastreio = ["LB334490757SE"]
-
-correios = new RastreioBrasil(codRastreio);
+correios = new  RastreioBrasil(codRastreio);
 
 correios.rastrearEncomendas().then((response) => {
-    console.log(response.data);
+  console.log(response);
 });
-
 ```
 
-### Resposta
+  
 
-Com sucesso:
+### Resposta
 
 ``` javascript
 {
@@ -192,35 +220,45 @@ Com sucesso:
   categoria: 'ENCOMENDA PAC',
   evento: [
     {
-      tipo: 'PO',
-      status: '01',
-      data: '14/04/2020',
-      hora: '14:28',
-      descricao: 'Objeto postado',
-      local: 'AGF VILA PREL',
-      codigo: '05777970'
+    tipo:  'PO',
+    status:  '01',
+    data:  '14/04/2020',
+    hora:  '14:28',
+    descricao:  'Objeto postado',
+    local:  'AGF VILA PREL',
+    codigo:  '05777970'
     }
   ]
 }
 ```
 
+  
+
 # Argumentos para a consulta da API
+
+  
 
   
 
 -  ``codRastreio`` - **Array[String]**
 
+  
+
 Array com os códigos de rastreio
 
   
+
   
 
 -  ``nCdServico`` - **String**
 
   
+
   
 
 Código do serviço:
+
+  
 
   
 
@@ -232,7 +270,11 @@ Código do serviço:
 
   
 
+  
+
 - 04065 = SEDEX à vista pagamento na entrega
+
+  
 
   
 
@@ -244,7 +286,11 @@ Código do serviço:
 
   
 
+  
+
 - 04707 = PAC à vista pagamento na entrega
+
+  
 
   
 
@@ -256,13 +302,19 @@ Código do serviço:
 
   
 
+  
+
 - 40215 = SEDEX 10 (à vista e a faturar)
 
   
 
   
 
+  
+
 - 40290 = SEDEX Hoje Varejo
+
+  
 
   
 
@@ -278,7 +330,11 @@ Código do serviço:
 
   
 
+  
+
 CEP de Origem. Exemplo: **05311900**
+
+  
 
   
 
@@ -294,7 +350,11 @@ CEP de Origem. Exemplo: **05311900**
 
   
 
+  
+
 CEP de Destino
+
+  
 
   
 
@@ -310,7 +370,11 @@ CEP de Destino
 
   
 
+  
+
 Peso da encomenda, incluindo sua embalagem. O peso deve ser informado em quilogramas. Se o formato for Envelope, o valor máximo permitido será 1 kg
+
+  
 
   
 
@@ -326,7 +390,11 @@ Peso da encomenda, incluindo sua embalagem. O peso deve ser informado em quilogr
 
   
 
+  
+
 Formato da encomenda (incluindo embalagem)
+
+  
 
   
 
@@ -338,13 +406,19 @@ Formato da encomenda (incluindo embalagem)
 
   
 
+  
+
 - 2 = Formato rolo/prisma
 
   
 
   
 
+  
+
 - 3 = Envelope
+
+  
 
   
 
@@ -360,7 +434,11 @@ Formato da encomenda (incluindo embalagem)
 
   
 
+  
+
 Comprimento da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -376,7 +454,11 @@ Comprimento da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Altura da encomenda (incluindo embalagem), em centímetros. Se o formato for envelope, informar zero (0)
+
+  
 
   
 
@@ -392,7 +474,11 @@ Altura da encomenda (incluindo embalagem), em centímetros. Se o formato for env
 
   
 
+  
+
 Largura da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -408,7 +494,11 @@ Largura da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Diâmetro da encomenda (incluindo embalagem), em centímetros
+
+  
 
   
 
@@ -422,7 +512,11 @@ Diâmetro da encomenda (incluindo embalagem), em centímetros
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional mão própria
+
+  
 
   
 
@@ -434,7 +528,11 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 - N = não **PADRÃO**
+
+  
 
   
 
@@ -448,7 +546,11 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional valor declarado. Neste campo deve ser apresentado o valor declarado desejado, em Reais
+
+  
 
   
 
@@ -462,7 +564,11 @@ Indica se a encomenda será entregue com o serviço adicional valor declarado. N
 
   
 
+  
+
 Indica se a encomenda será entregue com o serviço adicional mão própria
+
+  
 
   
 
@@ -474,21 +580,25 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
+  
+
 - N = não **PADRÃO**
 
   
-###  O que está em desenvolvimento ?
 
-- Realizar a limpeza e reestruturação dos códigos  🔴
-- Realizar a reorganização arquivos  🔴
-- Padronizar as respostas dos erros  🔴
-- Terminar de desenvolver o rastreio de encomendas  🟡.
+### O que está em desenvolvimento ?
+
+  
+
+- Terminar de desenvolver o rastreio de encomendas 🟡.
+
 - Atualizar o package.json e o README.md 🟢.
- 
 
   
 
 ### 👍 Contribuição
+
+  
 
   
 
@@ -500,7 +610,11 @@ Want to contribute? Great!
 
   
 
+  
+
 1. Fork it
+
+  
 
   
 
@@ -508,11 +622,17 @@ Want to contribute? Great!
 
   
 
+  
+
 3. Commit your changes (git commit -m 'Add some feature')
 
   
 
+  
+
 4. Push to the branch (git push origin my-new-feature)
+
+  
 
   
 
@@ -522,11 +642,17 @@ Want to contribute? Great!
 
   
 
+  
+
 ### License
 
   
 
+  
+
 ----
+
+  
 
   
 
@@ -538,13 +664,19 @@ MIT License
 
   
 
+  
+
 Copyright (c) 2020 Lucas Finoti
 
   
 
   
 
+  
+
 [See more about the license][LICENSE]
+
+  
 
   
 

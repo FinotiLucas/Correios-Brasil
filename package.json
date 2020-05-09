@@ -1,7 +1,7 @@
 {
   "name": "correios-brasil",
-  "version": "1.0.1",
-  "description": " Módulo para encontrar informações sobre um CEP, calcular os prazos, valores e restrições de uma entrega e realizar o rastreio de encomendas nacionais ou internacionais ",
+  "version": "1.0.2",
+  "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
