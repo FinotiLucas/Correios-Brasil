@@ -103,7 +103,7 @@ O Correios Brasil é uma ferramenta completa para quem procura facilidade para s
 
   
 
-## Medium storie explicando o motivo do surgimento do pacote.
+## Medium storie explicando o pacote.
 
 <a  href="https://medium.com/@finoti.limalucas/correios-javascript-conhe%C3%A7a-o-correios-brasil-a-solu%C3%A7%C3%A3o-mais-completa-para-trabalhar-com-d9121b745e27">
 
