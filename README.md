@@ -72,12 +72,12 @@
   
 
   
-
-[![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
+<center>
+  [![NPM](https://nodei.co/npm/correios-brasil.png?mini=true)](https://www.npmjs.com/package/correios-brasil/)
+</center>
 
   
 
-  
 
 </p>
 
@@ -93,12 +93,18 @@
   
 O Correios Brasil é uma ferramenta completa para quem procura facilidade para sua aplicação, otimizando sua loja virtual e seu serviço como: consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar seu rastreio tudo em um único lugar, agilizando assim os processos e demandas do dia a dia. Portanto, poupando seu tempo, por isso aproveite o pacote e não esqueça de deixar uma estrela no repositório, obrigado!
 
+
+## Vídeo Tutorial
+<iframe width="100%" height="512" src="https://www.youtube.com/embed/Nefhor-MDs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>  
   
-  
+
+## Medium storie explicando o motivo do surgimento do pacote.
+<a  href="https://medium.com/@finoti.limalucas/correios-javascript-conhe%C3%A7a-o-correios-brasil-a-solu%C3%A7%C3%A3o-mais-completa-para-trabalhar-com-d9121b745e27">
+<img alt="License" height="56" src="https://www.thelogocreative.co.uk/wp-content/uploads/2017/08/1_uLuWzCXfq2rt1t_TkuLB8A.png">
+</a>
 
 ## Como instalar
-
-  
   
 
 ```
