@@ -55,8 +55,7 @@
 
   
 
-<img  alt="License"  src="https://img.shields.io/badge/license-MIT-red">
-
+<img  alt="License"  src="https://img.shields.io/badge/license-Apache 2.0-red">
   
 
   
@@ -692,8 +691,7 @@ Want to contribute? Great!
 
   
 
-MIT License
-
+Apache License 2.0
   
 
   
