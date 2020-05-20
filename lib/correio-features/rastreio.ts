@@ -16,6 +16,11 @@ interface RastreioResponse {
   events: Array<RastreioEvent>;
 }
 
+/**
+ * 
+ * @param {string} code 
+ */
+
 const rastrearEncomendas = (code: string) : Promise<void | RastreioResponse> => {
   return new Promise((resolve, reject) => {
     request(`${URL.BASERASTREIO}/${code}`, {
