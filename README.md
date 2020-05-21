@@ -1,10 +1,9 @@
 
   
 
-# Correios Brasil
+# Correios Brasil -- VERSÃO 2.0
 
   
-
   
 
 <h4  align="center">
@@ -93,7 +92,7 @@
 O Correios Brasil é uma ferramenta completa para quem procura facilidade para sua aplicação, otimizando sua loja virtual e seu serviço como: consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar seu rastreio tudo em um único lugar, agilizando assim os processos e demandas do dia a dia. Portanto, poupando seu tempo, por isso aproveite o pacote e não esqueça de deixar uma estrela no repositório, obrigado!
 
 
-## Vídeo Tutorial
+## Vídeo Tutorial versão 1.0.4 ou anterior
 
 
 
@@ -102,19 +101,22 @@ O Correios Brasil é uma ferramenta completa para quem procura facilidade para s
 
   
 
-## Medium storie explicando o pacote.
+## Medium storie explicando o pacote na versão 2.0.
 
 <a  href="https://medium.com/@finoti.limalucas/correios-javascript-conhe%C3%A7a-o-correios-brasil-a-solu%C3%A7%C3%A3o-mais-completa-para-trabalhar-com-d9121b745e27">
 
 <img  alt="License"  height="56"  src="https://www.thelogocreative.co.uk/wp-content/uploads/2017/08/1_uLuWzCXfq2rt1t_TkuLB8A.png">
 
 </a>  
-  
+
+## O que o Correios-Brasil é capaz de fazer ?
+- Obter informações de um CEP específico (Em dev: informações de multiplos CEPs);
+- Cálcular preços e prazos para uma entrega;
+- Rastreio uma ou mais encomendas.
+
+
 
 ## Como instalar
-
-  
-  
 
 ```
 npm install correios-brasil --save
@@ -130,12 +132,12 @@ npm install correios-brasil --save
 ``` javascript
 const { CepBrasil } = require("correios-brasil");
 
-  
-const  cep = '21770200'
+// Cep pode ser String ou Number
+const  cep = '21770200' // 21770200 , '21770-200', '21770 200'.... qualquer um formato serve
 
-correios = new  CepBrasil(cep);
+correios = new  CepBrasil();
 
-correios.consultarCEP().then((response) => {
+correios.consultarCEP(cep).then((response) => {
   console.log(response);
 });
 ```
@@ -175,9 +177,9 @@ let  args = {
   nVlDiametro:  "0",
 };
 
-correios = new  CorreiosBrasil(args); 
+correios = new  CorreiosBrasil(); 
 
-correios.CalcPrecoPrazo().then((response) => {
+correios.calcPrecoPrazo(args).then((response) => {
   console.log(response);
 });
 ```
@@ -202,8 +204,7 @@ correios.CalcPrecoPrazo().then((response) => {
   MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
 }
 ```
-
-  
+ 
   
 
 ## Como rastrear uma encomenda
@@ -212,11 +213,11 @@ correios.CalcPrecoPrazo().then((response) => {
 ``` javascript
 const { RastreioBrasil } = require('correios-brasil')
 
-let  codRastreio = "PW639018542BR"
+let  codRastreio = ['PW639018542BR', 'PW935793588BR'] // array de códigos de rastreios
 
-correios = new  RastreioBrasil(codRastreio);
+correios = new  RastreioBrasil();
 
-correios.rastrearEncomendas().then((response) => {
+correios.rastrearEncomendas(codRastreio).then((response) => {
   console.log(response);
 });
 ```
@@ -227,7 +228,7 @@ correios.rastrearEncomendas().then((response) => {
 
 ``` javascript
 {
-  events: [
+  '0': [
     {
       status: 'Status: Objeto encaminhado ',
       data: 'Data  : 15/04/2020 | Hora: 09:03',
@@ -238,12 +239,12 @@ correios.rastrearEncomendas().then((response) => {
       status: 'Status: Objeto encaminhado ',
       data: 'Data  : 15/04/2020 | Hora: 22:18',
       origem: 'Origem: CTE CAJAMAR - Cajamar / SP',
-      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'      
+      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
     },
     {
       status: 'Status: Objeto encaminhado ',
       data: 'Data  : 16/04/2020 | Hora: 10:04',
-      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',       
+      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',
       destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
     },
     {
@@ -261,6 +262,41 @@ correios.rastrearEncomendas().then((response) => {
       data: 'Data  : 17/04/2020 | Hora: 11:12',
       local: 'Local: CDD ITAGUAI - Itaguai / RJ'
     }
+  ],
+  '1': [
+    {
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 05/05/2020 | Hora: 18:29',
+      origem: 'Origem: AGF CIDADE DAS ROSAS - Sapiranga / RS',
+      destino: 'Destino: CTCE PORTO ALEGRE - Porto Alegre / RS'
+    },
+    {
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 09/05/2020 | Hora: 03:05',
+      origem: 'Origem: CTE CAJAMAR - Cajamar / SP',
+      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
+    },
+    {
+      status: 'Status: Objeto encaminhado ',
+      data: 'Data  : 12/05/2020 | Hora: 13:54',
+      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',
+      destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto saiu para entrega ao destinatário',
+      data: 'Data  : 13/05/2020 | Hora: 10:18',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto entregue ao destinatário',
+      data: 'Data  : 13/05/2020 | Hora: 13:22',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
+    },
+    {
+      status: 'Status: Objeto entregue ao destinatário',
+      data: 'Data  : 13/05/2020 | Hora: 13:22',
+      local: 'Local: CDD ITAGUAI - Itaguai / RJ'
+    }
   ]
 }
 ```
@@ -273,7 +309,7 @@ correios.rastrearEncomendas().then((response) => {
 
   
 
--  ``codRastreio`` - **String**
+-  ``codRastreio`` - **Array[String]**
 
   
 
@@ -355,7 +391,7 @@ Código do serviço:
 
   
 
--  ``sCepOrigem`` - **String**
+-  ``sCepOrigem`` - **String/Number**
 
   
 
@@ -375,7 +411,7 @@ CEP de Origem. Exemplo: **05311900**
 
   
 
--  ``sCepDestino`` - **String**
+-  ``sCepDestino`` - **String/Number**
 
   
 
