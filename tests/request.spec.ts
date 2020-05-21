@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import { request } from '../lib/utils/request'
+import { request } from '../src/utils/request'
 
 describe('Testes no request', () => {
   it('Deve retornar uma promise', () => {

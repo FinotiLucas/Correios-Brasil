@@ -2,10 +2,16 @@
   "name": "correios-brasil",
   "version": "1.0.4",
   "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "ts-node index.ts",
-    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
+    "build": "rimraf dist && mkdirp dist && rollup -c"
   },
   "keywords": [
     "entrega",
@@ -33,19 +39,37 @@
   },
   "author": "Lucas Lima Finoti <lucas.finoti@protonmail.com>",
   "license": "Apache License 2.0",
-  "dependencies": {
-    "@types/node-fetch": "^2.5.7",
+  "peerDependencies": {
     "cheerio": "^1.0.0-rc.3",
     "esm": "^3.2.25",
     "iconv-lite": "^0.5.1",
     "node-fetch": "^2.6.0",
-    "xml-js": "^1.6.11"
+    "xml-js": "^1.6.11",
+    "@types/cheerio": "^0.22.18",
+    "@types/node-fetch": "^2.5.7",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "esm": "^3.2.25",
+    "iconv-lite": "^0.5.1",
+    "node-fetch": "^2.6.0",
+    "xml-js": "^1.6.11",
+    "@types/cheerio": "^0.22.18",
+    "@types/node-fetch": "^2.5.7",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
     "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
     "mocha": "^7.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.10.5",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.1",
     "ts-node": "^8.10.1",
     "tslint": "^6.1.2",
     "typescript": "^3.9.2"

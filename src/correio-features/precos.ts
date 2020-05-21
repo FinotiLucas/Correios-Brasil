@@ -64,7 +64,7 @@ const calcularPrecoPrazo = (precoPrazo: PrecoPrazoRequest): Promise<void | Preco
 }
 
 const convertJsonToPrazoPrecoResponse = (obj: any): PrecoPrazoResponse => {
-  const precoPrazoResponse = Object.keys(obj).reduce((acc, key) => {
+  const precoPrazoResponse = Object.keys(obj).reduce((acc: any, key) => {
     acc[key] = obj[key]._text ? obj[key]._text : obj[key]._cdata
     return acc
   }, {} as PrecoPrazoResponse)

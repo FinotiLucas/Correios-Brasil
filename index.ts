@@ -1,6 +1,6 @@
-import consultarCep from './lib/correio-features/cep'
-import calcularPrecoPrazo from './lib/correio-features/precos'
-import rastrearEncomendas from './lib/correio-features/rastreio'
+import consultarCep from './src/correio-features/cep'
+import calcularPrecoPrazo from './src/correio-features/precos'
+import rastrearEncomendas from './src/correio-features/rastreio'
 
 consultarCep('30380531').then(res => console.log(res)).catch(err => console.error(err, 'asd'))
 

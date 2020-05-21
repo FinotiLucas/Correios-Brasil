@@ -2,8 +2,8 @@ import { expect } from 'chai'
 import fs from 'fs'
 import path from 'path'
 
-import { sanitizeCep } from '../lib/utils/validation'
-import { convertArrayBufferToString, convertXMLStringToJson } from '../lib/utils/parsers'
+import { sanitizeCep } from '../src/utils/validation'
+import { convertArrayBufferToString, convertXMLStringToJson } from '../src/utils/parsers'
 
 describe('Sanitize Cep', () => {
   it('Cep com tamanho inválido', () => {

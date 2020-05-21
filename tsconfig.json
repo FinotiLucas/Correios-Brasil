@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "module": "ES6",
     "esModuleInterop": true,
-    "target": "es2015",
+    "target": "ES2015",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
-    "declaration": true
+    "outDir": "./dist"
   },
   "lib": ["es2015"],
-  "include": ["lib/**/*"],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "dist/**/*"
