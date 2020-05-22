@@ -3,18 +3,7 @@ import cheerio from 'cheerio'
 import { request } from '../utils/request'
 import { convertArrayBufferToString } from '../utils/parsers'
 import URL from '../URL'
-
-interface RastreioEvent {
-  status: string;
-  data: string;
-  origem?: string;
-  destino?: string;
-  local?: string;
-}
-
-interface RastreioResponse {
-  events: Array<RastreioEvent>;
-}
+import { RastreioResponse, RastreioEvent } from '../Interfaces'
 
 /**
  * 

@@ -4,18 +4,7 @@
  import { sanitizeCep } from '../utils/validation'
  import { request } from '../utils/request'
  import URL from '../URL'
-
- interface Cep { 
-  cep: string;
-  logradouro: string;
-  complemento: string;
-  bairro: string;
-  localidade: string;
-  uf: string;
-  unidade: string;
-  ibge: string;
-  gia: string;
-}
+ import { Cep } from '../Interfaces'
 
 /**
  * 

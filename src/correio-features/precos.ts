@@ -4,33 +4,7 @@ import { sanitizeCep } from '../utils/validation'
 import { request } from '../utils/request'
 import { convertArrayBufferToString, convertXMLStringToJson } from '../utils/parsers'
 import URL from '../URL'
-
-interface PrecoPrazoRequest {
-  sCepOrigem: string;
-  sCepDestino: string;
-  nVlPeso: string;
-  nCdFormato: string;
-  nVlComprimento: string;
-  nVlAltura: string;
-  nVlLargura: string;
-  nCdServico: string;
-  nVlDiametro: string;
-}
-
-interface PrecoPrazoResponse {
-  Codigo: string;
-  Valor: string;
-  PrazoEntrega: string;
-  ValorSemAdicionais: string;
-  ValorMaoPropria: string;
-  ValorAvisoRecebimento: string;
-  ValorDeclarado: string;
-  EntregaDomiciliar: string;
-  EntregaSabado: string;
-  obsFim: string;
-  Erro: string;
-  MsgErro: string;
-}
+import { PrecoPrazoRequest, PrecoPrazoResponse } from '../Interfaces'
 
 /**
  * 
