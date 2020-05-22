@@ -11,7 +11,7 @@
  * @param {string} cep
  */
 
-const consultarCep = (cep: string) : Promise<void | Cep> => {
+function consultarCep(cep: string) : Promise<void | Cep> {
   return new Promise((resolve, reject) =>
     request(`${URL.BASECEP}/${sanitizeCep(cep)}/json`, {
       method: 'GET',

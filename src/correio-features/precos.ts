@@ -11,7 +11,7 @@ import { PrecoPrazoRequest, PrecoPrazoResponse } from '../Interfaces'
  * @param {PrecoPrazoRequest} precoPrazo 
  */
 
-const calcularPrecoPrazo = (precoPrazo: PrecoPrazoRequest): Promise<void | PrecoPrazoResponse> => {
+function calcularPrecoPrazo(precoPrazo: PrecoPrazoRequest): Promise<void | PrecoPrazoResponse> {
   return new Promise((resolve, reject) => {
     const qs : any = {...precoPrazo, ...{
       sCepOrigem: sanitizeCep(precoPrazo.sCepOrigem),
@@ -37,7 +37,7 @@ const calcularPrecoPrazo = (precoPrazo: PrecoPrazoRequest): Promise<void | Preco
   })
 }
 
-const convertJsonToPrazoPrecoResponse = (obj: any): PrecoPrazoResponse => {
+function convertJsonToPrazoPrecoResponse(obj: any): PrecoPrazoResponse {
   const precoPrazoResponse = Object.keys(obj).reduce((acc: any, key) => {
     acc[key] = obj[key]._text ? obj[key]._text : obj[key]._cdata
     return acc

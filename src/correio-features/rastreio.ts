@@ -25,7 +25,7 @@ const rastrearEncomendas = (code: string) : Promise<void | RastreioResponse> => 
   })
 }
 
-const convertHtmlToJson = (htmlString: string) : RastreioResponse => {
+function convertHtmlToJson(htmlString: string) : RastreioResponse {
   const html = cheerio.load(htmlString)
   const elemArray = []
   html('ul.linha_status').each((_, elem) => {

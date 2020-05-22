@@ -6,7 +6,7 @@ interface RequestOptions {
   headers: any
 }
 
-const request = (url: string, options: RequestOptions): Promise<any> => {
+function request(url: string, options: RequestOptions): Promise<any> {
   return fetch(url, options).then(res => {
     if (!res.ok) throw new Error(res.statusText)
     if (res.headers.get('content-type') !== 'application/json; charset=utf-8') return res.arrayBuffer()
