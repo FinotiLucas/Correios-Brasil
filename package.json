@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
-    "declarations": "tsc -emitDeclarationOnly",
+    "declarations": "tsc -emitDeclarationOnly --d",
     "build": "rimraf dist && mkdirp dist && rollup -c"
   },
   "keywords": [

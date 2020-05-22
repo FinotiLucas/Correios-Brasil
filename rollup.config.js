@@ -26,8 +26,10 @@ export default [{
   }), commonjs({
     extensions: ['.js', '.ts']
   }), terser()]
-}, {
-  input: "./src/index.d.ts",
-  output: [{ file: "dist/my-library.d.ts", format: "es" }],
-  plugins: [dts()],
-},]
+}, 
+// {
+//   input: "./src/index.d.ts",
+//   output: [{ file: "dist/my-library.d.ts", format: "es" }],
+//   plugins: [dts()],
+// }
+]

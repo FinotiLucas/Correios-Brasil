@@ -2,7 +2,7 @@ import consultarCep from './src/correio-features/cep'
 import calcularPrecoPrazo from './src/correio-features/precos'
 import rastrearEncomendas from './src/correio-features/rastreio'
 
-consultarCep('30380531').then(res => console.log(res)).catch(err => console.error(err, 'asd'))
+consultarCep('30380530').then(res => console.log(res)).catch(err => console.error(err, 'asd'))
 
 const object = {
   sCepOrigem:  "81200100",
@@ -16,6 +16,6 @@ const object = {
   nVlDiametro:  "0",
 }
 
-calcularPrecoPrazo(object).then(res => console.info(res))
+// calcularPrecoPrazo(object).then(res => console.info(res))
 
-rastrearEncomendas('PW639018542BR').then(res => console.log(res))
+// rastrearEncomendas('PW639018542BR').then(res => console.log(res))
