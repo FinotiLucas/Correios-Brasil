@@ -40,18 +40,6 @@
   },
   "author": "Lucas Lima Finoti <lucas.finoti@protonmail.com>",
   "license": "Apache License 2.0",
-  "peerDependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "esm": "^3.2.25",
-    "iconv-lite": "^0.5.1",
-    "node-fetch": "^2.6.0",
-    "xml-js": "^1.6.11",
-    "@types/cheerio": "^0.22.18",
-    "@types/node-fetch": "^2.5.7",
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
-    "querystring": "^0.2.0"
-  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "esm": "^3.2.25",

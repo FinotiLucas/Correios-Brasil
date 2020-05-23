@@ -1,8 +1,6 @@
-import consultarCep from './src/correio-features/cep'
-import calcularPrecoPrazo from './src/correio-features/precos'
-import rastrearEncomendas from './src/correio-features/rastreio'
+import Correios from './src'
 
-consultarCep('30380530').then(res => console.log(res)).catch(err => console.error(err, 'asd'))
+Correios.consultarCep('30380530').then(res => console.log(res)).catch(err => console.error(err, 'asd'))
 
 const object = {
   sCepOrigem:  "81200100",

@@ -10,7 +10,7 @@ import { RastreioResponse, RastreioEvent } from '../Interfaces'
  * @param {string} code 
  */
 
-const rastrearEncomendas = (code: string) : Promise<void | RastreioResponse> => {
+function rastrearEncomendas(code: string) : Promise<void | RastreioResponse> {
   return new Promise((resolve, reject) => {
     request(`${URL.BASERASTREIO}/${code}`, {
       method: 'GET',
