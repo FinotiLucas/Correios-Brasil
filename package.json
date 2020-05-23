@@ -12,7 +12,8 @@
     "dev": "ts-node index.ts",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "declarations": "tsc -emitDeclarationOnly --d",
-    "build": "rimraf dist && mkdirp dist && rollup -c"
+    "build": "rimraf dist && mkdirp dist && rollup -c",
+    "postbuild": "dts-bundle-generator -o ./dist/corrreios.d.ts ./src/index.ts"
   },
   "keywords": [
     "entrega",

@@ -2,7 +2,7 @@
   "input": "./src/index.ts",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "./dist",
+    "declarationDir": "./src",
     "forceConsistentCasingInFileNames": true,
     "module": "CommonJS",
     "esModuleInterop": true,
