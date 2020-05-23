@@ -128,16 +128,12 @@ npm install correios-brasil --save
   
 
 ``` javascript
-const { CepBrasil } = require("correios-brasil");
+const correios = require("correios-brasil");
 
   
 const  cep = '21770200'
 
-correios = new  CepBrasil(cep);
-
-correios.consultarCEP().then((response) => {
-  console.log(response);
-});
+correios.consultarCep(cep).then(res => console.log(res)).catch(err => console.error(err))
 ```
 
 ### Resposta
@@ -160,7 +156,7 @@ correios.consultarCEP().then((response) => {
 
 
 ``` javascript
-const { CorreiosBrasil } = require("correios-brasil"); 
+const correios = require("correios-brasil"); 
 
 let  args = {
   // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
@@ -175,14 +171,9 @@ let  args = {
   nVlDiametro:  "0",
 };
 
-correios = new  CorreiosBrasil(args); 
+calcularPrecoPrazo(args).then(res => console.info(res)).catch(err => console.log(err))
 
-correios.CalcPrecoPrazo().then((response) => {
-  console.log(response);
-});
-```
-
-  
+```  
 
 ### Resposta
 
@@ -203,22 +194,15 @@ correios.CalcPrecoPrazo().then((response) => {
 }
 ```
 
-  
-  
-
 ## Como rastrear uma encomenda
   
 
 ``` javascript
-const { RastreioBrasil } = require('correios-brasil')
+const correios = require('correios-brasil')
 
 let  codRastreio = "PW639018542BR"
 
-correios = new  RastreioBrasil(codRastreio);
-
-correios.rastrearEncomendas().then((response) => {
-  console.log(response);
-});
+correios.rastrearEncomendas(codRastreio).then(res => console.log(res))
 ```
 
   

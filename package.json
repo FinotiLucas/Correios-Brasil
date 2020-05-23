@@ -6,14 +6,16 @@
   "module": "dist/index.es.js",
   "types": "dist/index.d.js",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
     "dev": "ts-node index.ts",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
     "declarations": "tsc -emitDeclarationOnly --d",
     "build": "rimraf dist && mkdirp dist && rollup -c",
-    "postbuild": "dts-bundle-generator -o ./dist/corrreios.d.ts ./src/index.ts"
+    "postbuild": "dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "entrega",
