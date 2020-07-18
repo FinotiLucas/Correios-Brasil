@@ -11,6 +11,7 @@
     "entregas",
     "preço",
     "prazo",
+    "prazos",
     "correio",
     "correios",
     "frete",
@@ -34,7 +35,7 @@
   "license": "Apache License 2.0",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "iconv-lite": "^0.5.1",
+    "iconv-lite": "^0.6.2",
     "node-fetch": "^2.6.0",
     "xml-js": "^1.6.11"
   }
