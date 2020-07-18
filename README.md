@@ -101,7 +101,7 @@ O Correios Brasil é uma ferramenta completa para quem procura facilidade para s
 
   
 
-## Medium storie explicando o pacote na versão 2.0.
+## Medium storie explicando o pacote.
 
 <a  href="https://medium.com/@finoti.limalucas/correios-javascript-conhe%C3%A7a-o-correios-brasil-a-solu%C3%A7%C3%A3o-mais-completa-para-trabalhar-com-d9121b745e27">
 
@@ -111,7 +111,7 @@ O Correios Brasil é uma ferramenta completa para quem procura facilidade para s
 
 ## O que o Correios-Brasil é capaz de fazer ?
 - Obter informações de um CEP específico (Em dev: informações de multiplos CEPs);
-- Cálcular preços e prazos para uma entrega;
+- Cálcular preços e prazos para uma entrega (Em dev: informações de multiplas entregas);
 - Rastreio uma ou mais encomendas.
 
 
@@ -130,16 +130,15 @@ npm install correios-brasil --save
   
 
 ``` javascript
-const { CepBrasil } = require("correios-brasil");
+const { consultarCep } = require("correios-brasil");
 
 // Cep pode ser String ou Number
-const  cep = '21770200' // 21770200 , '21770-200', '21770 200'.... qualquer um formato serve
+const cep = "21770200"; // 21770200 , '21770-200', '21770 200'.... qualquer um formato serve
 
-correios = new  CepBrasil();
-
-correios.consultarCEP(cep).then((response) => {
+consultarCep(cep).then((response) => {
   console.log(response);
 });
+
 ```
 
 ### Resposta
@@ -162,7 +161,7 @@ correios.consultarCEP(cep).then((response) => {
 
 
 ``` javascript
-const { CorreiosBrasil } = require("correios-brasil"); 
+const { calcularPrecoPrazo } = require("correios-brasil"); 
 
 let  args = {
   // Não se preocupe com a formatação dos valores de entrada do cep, qualquer uma será válida (ex: 21770-200, 21770 200, 21asa!770@###200 e etc),
@@ -177,9 +176,7 @@ let  args = {
   nVlDiametro:  "0",
 };
 
-correios = new  CorreiosBrasil(); 
-
-correios.calcPrecoPrazo(args).then((response) => {
+calcularPrecoPrazo(args).then((response) => {
   console.log(response);
 });
 ```
@@ -207,17 +204,15 @@ correios.calcPrecoPrazo(args).then((response) => {
  
   
 
-## Como rastrear uma encomenda
+## Como rastrear uma ou mais encomendas
   
 
 ``` javascript
-const { RastreioBrasil } = require('correios-brasil')
+const { rastrearEncomendas } = require('correios-brasil')
 
 let  codRastreio = ['PW639018542BR', 'PW935793588BR'] // array de códigos de rastreios
 
-correios = new  RastreioBrasil();
-
-correios.rastrearEncomendas(codRastreio).then((response) => {
+rastrearEncomendas(codRastreio).then((response) => {
   console.log(response);
 });
 ```
