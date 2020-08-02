@@ -217,46 +217,46 @@ rastrearEncomendas(codRastreio).then((response) => {
 {
   '0': [
     {
-      status: 'Status: Objeto postado',
+      status: 'Objeto postado',
       data: '14/04/2020',
       hora: '14:28',
       local: 'AGF VILA PREL - Sao Paulo / SP'
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '15/04/2020',
       hora: '09:03',
       origem: 'Origem: AGF VILA PREL - Sao Paulo / SP',    
       destino: 'Destino: CTE CAJAMAR - Cajamar / SP'       
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '15/04/2020',
       hora: '22:18',
       origem: 'Origem: CTE CAJAMAR - Cajamar / SP',        
       destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '16/04/2020',
       hora: '10:04',
-      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',
+      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ', 
       destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto saiu para entrega ao destinatário',
+      status: 'Objeto saiu para entrega ao destinatário',
       data: '17/04/2020',
       hora: '08:06',
       local: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto entregue ao destinatário',
+      status: 'Objeto entregue ao destinatário',
       data: '17/04/2020',
       hora: '11:12',
       local: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto entregue ao destinatário',
+      status: 'Objeto entregue ao destinatário',
       data: '17/04/2020',
       hora: '11:12',
       local: 'CDD ITAGUAI - Itaguai / RJ'
@@ -264,46 +264,46 @@ rastrearEncomendas(codRastreio).then((response) => {
   ],
   '1': [
     {
-      status: 'Status: Objeto postado após o horário limite da unidade',
+      status: 'Objeto postado após o horário limite da unidade',
       data: '05/05/2020',
       hora: '18:17',
       local: 'AGF CIDADE DAS ROSAS - Sapiranga / RS'
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '05/05/2020',
       hora: '18:29',
       origem: 'Origem: AGF CIDADE DAS ROSAS - Sapiranga / RS',
       destino: 'Destino: CTCE PORTO ALEGRE - Porto Alegre / RS'
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '09/05/2020',
       hora: '03:05',
       origem: 'Origem: CTE CAJAMAR - Cajamar / SP',
       destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
     },
     {
-      status: 'Status: Objeto encaminhado ',
+      status: 'Objeto encaminhado',
       data: '12/05/2020',
       hora: '13:54',
       origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',
       destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto saiu para entrega ao destinatário',
+      status: 'Objeto saiu para entrega ao destinatário',
       data: '13/05/2020',
       hora: '10:18',
       local: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto entregue ao destinatário',
+      status: 'Objeto entregue ao destinatário',
       data: '13/05/2020',
       hora: '13:22',
       local: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
-      status: 'Status: Objeto entregue ao destinatário',
+      status: 'Objeto entregue ao destinatário',
       data: '13/05/2020',
       hora: '13:22',
       local: 'CDD ITAGUAI - Itaguai / RJ'
