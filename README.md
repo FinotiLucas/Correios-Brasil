@@ -220,28 +220,28 @@ rastrearEncomendas(codRastreio).then((response) => {
       status: 'Objeto postado',
       data: '14/04/2020',
       hora: '14:28',
-      local: 'AGF VILA PREL - Sao Paulo / SP'
+      local: 'AGF VILA PREL - Sao Paulo / SP'     
     },
     {
       status: 'Objeto encaminhado',
       data: '15/04/2020',
       hora: '09:03',
-      origem: 'Origem: AGF VILA PREL - Sao Paulo / SP',    
-      destino: 'Destino: CTE CAJAMAR - Cajamar / SP'       
+      origem: 'AGF VILA PREL - Sao Paulo / SP',   
+      destino: 'CTE CAJAMAR - Cajamar / SP'       
     },
     {
       status: 'Objeto encaminhado',
       data: '15/04/2020',
       hora: '22:18',
-      origem: 'Origem: CTE CAJAMAR - Cajamar / SP',        
-      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
+      origem: 'CTE CAJAMAR - Cajamar / SP',       
+      destino: 'CTE BENFICA - Rio De Janeiro / RJ'
     },
     {
       status: 'Objeto encaminhado',
       data: '16/04/2020',
       hora: '10:04',
-      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ', 
-      destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
+      origem: 'CTE BENFICA - Rio De Janeiro / RJ',
+      destino: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
       status: 'Objeto saiu para entrega ao destinatário',
@@ -273,22 +273,22 @@ rastrearEncomendas(codRastreio).then((response) => {
       status: 'Objeto encaminhado',
       data: '05/05/2020',
       hora: '18:29',
-      origem: 'Origem: AGF CIDADE DAS ROSAS - Sapiranga / RS',
-      destino: 'Destino: CTCE PORTO ALEGRE - Porto Alegre / RS'
+      origem: 'AGF CIDADE DAS ROSAS - Sapiranga / RS',
+      destino: 'CTCE PORTO ALEGRE - Porto Alegre / RS'
     },
     {
       status: 'Objeto encaminhado',
       data: '09/05/2020',
       hora: '03:05',
-      origem: 'Origem: CTE CAJAMAR - Cajamar / SP',
-      destino: 'Destino: CTE BENFICA - Rio De Janeiro / RJ'
+      origem: 'CTE CAJAMAR - Cajamar / SP',
+      destino: 'CTE BENFICA - Rio De Janeiro / RJ'
     },
     {
       status: 'Objeto encaminhado',
       data: '12/05/2020',
       hora: '13:54',
-      origem: 'Origem: CTE BENFICA - Rio De Janeiro / RJ',
-      destino: 'Destino: CDD ITAGUAI - Itaguai / RJ'
+      origem: 'CTE BENFICA - Rio De Janeiro / RJ',
+      destino: 'CDD ITAGUAI - Itaguai / RJ'
     },
     {
       status: 'Objeto saiu para entrega ao destinatário',

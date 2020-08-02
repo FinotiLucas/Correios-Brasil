@@ -25,7 +25,11 @@
     "soap",
     "xml",
     "json",
-    "de"
+    "de",
+    "correios-api",
+    "rastreio de pacotes",
+    "rastreamento",
+    "sro"
   ],
   "repository": {
     "type": "git",
