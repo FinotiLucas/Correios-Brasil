@@ -1,7 +1,7 @@
 
   
 
-# Correios Brasil -- VERSÃO 2.0.2
+# Correios Brasil -- VERSÃO 2.0.3
 
   
   
@@ -90,14 +90,6 @@
 
   
 O Correios Brasil é uma ferramenta completa para quem procura facilidade para sua aplicação, otimizando sua loja virtual e seu serviço como: consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar seu rastreio tudo em um único lugar, agilizando assim os processos e demandas do dia a dia. Portanto, poupando seu tempo, por isso aproveite o pacote e não esqueça de deixar uma estrela no repositório, obrigado!
-
-
-## Vídeo Tutorial versão 1.0.4 ou anterior
-
-
-
-[<img src="https://img.youtube.com/vi/Nefhor-MDs8/maxresdefault.jpg" width="100%" height="512">](https://youtu.be/Nefhor-MDs8)
-
 
   
 
