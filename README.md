@@ -1,7 +1,7 @@
 
   
 
-# Correios Brasil -- VERSÃO 2.0.4
+# Correios Brasil -- VERSÃO 2.0.5
 
   
   
@@ -137,15 +137,14 @@ consultarCep(cep).then((response) => {
 
 ``` javascript
 {
-  cep: '21770-200',
-  logradouro: 'Rua Claudino Barata',
-  complemento: '',
-  bairro: 'Realengo',
-  localidade: 'Rio de Janeiro',
-  uf: 'RJ',
-  unidade: '',
-  ibge: '3304557',
-  gia: '' 
+  status: 200,
+  ok: true,
+  code: '21770-200',
+  state: 'RJ',
+  city: 'Rio de Janeiro',
+  district: 'Realengo',
+  address: 'Rua Claudino Barata',
+  statusText: 'ok'
 }
 ```
 
