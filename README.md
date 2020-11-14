@@ -1,7 +1,7 @@
 
   
 
-# Correios Brasil -- VERSÃO 2.0.5
+# Correios Brasil -- VERSÃO 2.1.0
 
   
   
@@ -103,7 +103,7 @@ O Correios Brasil é uma ferramenta completa para quem procura facilidade para s
 
 ## O que o Correios-Brasil é capaz de fazer ?
 - Obter informações de um CEP específico (Em dev: informações de multiplos CEPs);
-- Cálcular preços e prazos para uma entrega (Em dev: informações de multiplas entregas);
+- Cálcular preços e prazos para uma entrega em todos os serviços dos correios (PAC, SEDEX e etc);
 - Rastreio uma ou mais encomendas.
 
 
@@ -137,14 +137,16 @@ consultarCep(cep).then((response) => {
 
 ``` javascript
 {
-  status: 200,
-  ok: true,
-  code: '21770-200',
-  state: 'RJ',
-  city: 'Rio de Janeiro',
-  district: 'Realengo',
-  address: 'Rua Claudino Barata',
-  statusText: 'ok'
+  cep: '21770-200',
+  logradouro: 'Rua Claudino Barata',
+  complemento: '',
+  bairro: 'Realengo',
+  localidade: 'Rio de Janeiro',     
+  uf: 'RJ',
+  ibge: '3304557',
+  gia: '',
+  ddd: '21',
+  siafi: '6001'
 }
 ```
 
@@ -163,7 +165,7 @@ let  args = {
   nVlComprimento:  "20",
   nVlAltura:  "20",
   nVlLargura:  "20",
-  nCdServico:  "04014",
+  nCdServico:  ["04014",'04510'], //Array com os códigos de serviço
   nVlDiametro:  "0",
 };
 
@@ -178,18 +180,34 @@ calcularPrecoPrazo(args).then((response) => {
 
 ``` javascript
 {
-  Codigo: '04014',
-  Valor: '53,10',
-  PrazoEntrega: '13',
-  ValorSemAdicionais: '53,10',
-  ValorMaoPropria: '0,00',
-  ValorAvisoRecebimento: '0,00',
-  ValorValorDeclarado: '0,00',
-  EntregaDomiciliar: 'S',
-  EntregaSabado: 'S',
-  obsFim: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
-  Erro: '011',
-  MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega pela ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+  '0': {
+    Codigo: '04014',
+    Valor: '53,10',
+    PrazoEntrega: '8',
+    ValorSemAdicionais: '53,10',
+    ValorMaoPropria: '0,00',
+    ValorAvisoRecebimento: '0,00',
+    ValorDeclarado: '0,00',
+    EntregaDomiciliar: 'S',
+    EntregaSabado: 'S',
+    obsFim: 'O CEP de destino está sujeito a condições especiais de entrega  pela  ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
+    Erro: '011',
+    MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega  pela  ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+  },
+  '1': {
+    Codigo: '04510',
+    Valor: '27,80',
+    PrazoEntrega: '12',
+    ValorSemAdicionais: '27,80',
+    ValorMaoPropria: '0,00',
+    ValorAvisoRecebimento: '0,00',
+    ValorDeclarado: '0,00',
+    EntregaDomiciliar: 'S',
+    EntregaSabado: 'S',
+    obsFim: 'O CEP de destino está sujeito a condições especiais de entrega  pela  ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.',
+    Erro: '011',
+    MsgErro: 'O CEP de destino está sujeito a condições especiais de entrega  pela  ECT e será realizada com o acréscimo de até 7 (sete) dias úteis ao prazo regular.'
+  }
 }
 ```
  
@@ -253,12 +271,6 @@ rastrearEncomendas(codRastreio).then((response) => {
       data: '17/04/2020',
       hora: '11:12',
       local: 'CDD ITAGUAI - Itaguai / RJ'
-    },
-    {
-      status: 'Objeto entregue ao destinatário',
-      data: '17/04/2020',
-      hora: '11:12',
-      local: 'CDD ITAGUAI - Itaguai / RJ'
     }
   ],
   '1': [
@@ -300,12 +312,6 @@ rastrearEncomendas(codRastreio).then((response) => {
       data: '13/05/2020',
       hora: '13:22',
       local: 'CDD ITAGUAI - Itaguai / RJ'
-    },
-    {
-      status: 'Objeto entregue ao destinatário',
-      data: '13/05/2020',
-      hora: '13:22',
-      local: 'CDD ITAGUAI - Itaguai / RJ'
     }
   ]
 }
@@ -329,7 +335,7 @@ String com o código de rastreio
 
   
 
--  ``nCdServico`` - **String**
+-  ``nCdServico`` - **Array[String]**
 
   
 
@@ -675,66 +681,18 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
-### 👍 Contribuição
+### :recycle: Como contribuir
+
+- Fork esse repositório;
+- Crie uma branch com a sua feature: `git checkout -b my-feature`
+- Commit suas mudanças: `git commit -m 'feat: My new feature'`
+- Push a sua branch: `git push origin my-feature`
 
   
 
   
 
-  
-
-Want to contribute? Great!
-
-  
-
-  
-
-  
-
-1. Fork it
-
-  
-
-  
-
-2. Create your feature branch (git checkout -b my-new-feature)
-
-  
-
-  
-
-3. Commit your changes (git commit -m 'Add some feature')
-
-  
-
-  
-
-4. Push to the branch (git push origin my-new-feature)
-
-  
-
-  
-
-5. Create new Pull Request
-
-  
-
-  
-
-  
-
-### License
-
-  
-
-  
-
-----
-
-  
-
-  
-
+### :memo: Licença
   
 
 Apache License 2.0
