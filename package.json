@@ -42,5 +42,6 @@
     "iconv-lite": "^0.6.2",
     "node-fetch": "^2.6.1",
     "xml-js": "^1.6.11"
-  }
+  },
+  "types": "./lib/correios-brasil.d.ts"
 }
