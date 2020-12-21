@@ -115,6 +115,21 @@ npm install correios-brasil --save
  
 ```
 
+### Typescript
+
+Por padrão essa bibilioteca inclui uma definição de tipo para o Typescript.
+Para utilizá-la, basta importar da seguinte maneira.
+
+```typescript
+import { correiosBrasil } from "correios-brasil";
+```
+
+Os seguintes tipos foram providenciados:
+- CEPResposta: Resposta da função 'consultarCep'.
+- PrecoPrazo: Parâmetro que deve ser enviado na função 'consultarPrecoPrazo'.
+- PrecoPrazoResposta: Resposta da função 'consultarPrecoPrazo'.
+- RastreioEncomendaResposta: Resposta da função 'rastrearEncomendas'.
+- correiosBrasil: variável que contém as funções de chamadas de API.
   
 
 ## Como consultar um CEP
@@ -671,21 +686,7 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
   
 
-### Typescript
 
-Por padrão essa bibilioteca inclui uma definição de tipo para o Typescript.
-Para utilizá-la, basta importar da seguinte maneira.
-
-```typescript
-import { correiosBrasil } from "correios-brasil";
-```
-
-Os seguintes tipos foram providenciados:
-- CEPResposta: Resposta da função 'consultarCep'.
-- PrecoPrazo: Parâmetro que deve ser enviado na função 'consultarPrecoPrazo'.
-- PrecoPrazoResposta: Resposta da função 'consultarPrecoPrazo'.
-- RastreioEncomendaResposta: Resposta da função 'rastrearEncomendas'.
-- correiosBrasil: variável que contém as funções de chamadas de API.
 
 ### O que está em desenvolvimento ?
 
