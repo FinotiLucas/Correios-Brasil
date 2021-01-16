@@ -1,6 +1,6 @@
 {
   "name": "correios-brasil",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
   "main": "lib/index.js",
   "scripts": {

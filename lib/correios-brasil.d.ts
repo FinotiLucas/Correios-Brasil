@@ -3,7 +3,6 @@
 // Definitions by: Franco Brunetta Pan <https://github.com/francopan>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-
     export interface CEPResposta {
         cep: string;
         logradouro: string;

@@ -1,7 +1,7 @@
 
   
 
-# Correios Brasil -- VERSÃO 2.1.0
+# Correios Brasil -- VERSÃO 2.1.1
 
   
   
@@ -124,12 +124,6 @@ Para utilizá-la, basta importar da seguinte maneira.
 import { correiosBrasil } from "correios-brasil";
 ```
 
-Os seguintes tipos foram providenciados:
-- CEPResposta: Resposta da função 'consultarCep'.
-- PrecoPrazo: Parâmetro que deve ser enviado na função 'consultarPrecoPrazo'.
-- PrecoPrazoResposta: Resposta da função 'consultarPrecoPrazo'.
-- RastreioEncomendaResposta: Resposta da função 'rastrearEncomendas'.
-- correiosBrasil: variável que contém as funções de chamadas de API.
   
 
 ## Como consultar um CEP
