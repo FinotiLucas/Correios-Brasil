@@ -1,6 +1,6 @@
 {
   "name": "correios-brasil",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
   "main": "lib/index.js",
   "scripts": {
@@ -38,7 +38,7 @@
   "author": "Lucas Lima Finoti <lucas.finoti@protonmail.com>",
   "license": "Apache License 2.0",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.5",
     "iconv-lite": "^0.6.2",
     "node-fetch": "^2.6.1",
     "xml-js": "^1.6.11"

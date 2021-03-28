@@ -1,7 +1,7 @@
 
   
 
-# Correios Brasil -- VERSÃO 2.1.1
+# Correios Brasil -- VERSÃO 2.1.2
 
   
   
