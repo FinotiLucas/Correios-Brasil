@@ -15,6 +15,18 @@
         ddd: string;
         siafi: string;
     }
+    export interface ENDERECOResposta {
+        cep: string;
+        logradouro: string;
+        complemento: string;
+        bairro: string;
+        localidade: string;
+        uf: string;
+        ibge: string;
+        gia: string;
+        ddd: string;
+        siafi: string;
+    }
     export interface PrecoPrazo {
         sCepOrigem: string;
         sCepDestino: string;
@@ -52,6 +64,11 @@
     }
     export interface CorreiosBrasil {
         consultarCep(cep: string): Promise<CEPResposta>;
+        consultarEndereco(
+            uf: string,
+            municipio: string,
+            logradouro: string
+        ): Promise<ENDERECOResposta>;
         calcularPrecoPrazo(
             precoPrazo: PrecoPrazo,
         ): Promise<PrecoPrazoResposta>;
