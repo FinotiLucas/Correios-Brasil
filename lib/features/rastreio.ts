@@ -13,7 +13,7 @@ import {
 import { RastreioResponse, RastreioEvent } from '../interfaces';
 
 function rastrearEncomendas(
-  codes: Array<String>,
+  codes: Array<string>,
 ): Promise<void | RastreioResponse> {
   /**
    * @param {Array[String]} codes
@@ -23,7 +23,7 @@ function rastrearEncomendas(
 
   const response: any = Promise.all(
     codes.map((code: string) => fetchTrackingService(code)),
-  ).then((object) => object);
+  ).then(object => object);
   return response;
 }
 
@@ -36,7 +36,7 @@ function fetchTrackingService(code: string): Promise<void | RastreioEvent> {
         'content-type': 'text; charset=utf-8',
         'cache-control': 'no-cache',
       },
-    }).then((arrayBuffer) => {
+    }).then(arrayBuffer => {
       resolve(
         convertHtmlToJson(convertArrayBufferToString(arrayBuffer, 'utf-8')),
       );
@@ -51,7 +51,7 @@ function convertHtmlToJson(htmlString: string): RastreioEvent {
     elemArray.push(elem);
   });
   elemArray.shift();
-  const elemMap: any = elemArray.map((elem) => {
+  const elemMap: any = elemArray.map(elem => {
     const mapObj = {} as RastreioEvent; // Mudar
     html(elem)
       .find('li')

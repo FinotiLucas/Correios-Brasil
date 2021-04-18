@@ -51,7 +51,7 @@ describe('Parsers', () => {
 
     function stringToBuffer(str) {
       const buf = new ArrayBuffer(str.length * 2);
-      let bufView = new Uint16Array(buf);
+      const bufView = new Uint16Array(buf);
 
       for (
         let strIndex = 0, strLen = str.length;

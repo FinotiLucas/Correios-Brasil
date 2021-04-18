@@ -10,7 +10,6 @@ import {
   PrecoPrazoRequest,
   PrecoPrazoResponse,
   PrecoPrazoEvent,
-  RastreioEvent,
 } from '../interfaces';
 
 function calcularPrecoPrazo(
@@ -26,7 +25,7 @@ function calcularPrecoPrazo(
 
   const response: any = Promise.all(
     codes.map((code: string) => fetchPrecoPrazo(precoPrazo, code)),
-  ).then((object) => object);
+  ).then(object => object);
   return response;
 }
 

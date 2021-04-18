@@ -1,2 +1,2 @@
-declare function sanitizeCep(cep: String): String;
+declare function sanitizeCep(cep: string): string;
 export { sanitizeCep };

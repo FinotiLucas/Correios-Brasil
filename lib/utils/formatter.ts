@@ -1,4 +1,4 @@
-export function formatStatus(str: string) {
+export function formatStatus(str: string): string {
   /**
    * @param {string} str
    * Função responsável formatar o Local de entrega de uma encomenda
@@ -11,7 +11,7 @@ export function formatStatus(str: string) {
   return res;
 }
 
-export function formatDateTime(str: string) {
+export function formatDateTime(str: string): string[] {
   /**
    * @param {string} str
    * Função responsável por a formatação da data e hora de entrega de uma encomenda
@@ -27,7 +27,7 @@ export function formatDateTime(str: string) {
   return res;
 }
 
-export function formatLocal(str: string) {
+export function formatLocal(str: string): string {
   /**
    * @param {string} str
    * Função responsável formatar o Local de entrega de uma encomenda
@@ -40,7 +40,7 @@ export function formatLocal(str: string) {
   return res;
 }
 
-export function formatOrigin(str: string) {
+export function formatOrigin(str: string): string {
   /**
    * @param {string} str
    * Função responsável formatar o Origem do trajeto de entrega de uma encomenda
@@ -53,7 +53,7 @@ export function formatOrigin(str: string) {
   return res;
 }
 
-export function formatDestiny(str: string) {
+export function formatDestiny(str: string): string {
   /**
    * @param {string} str
    * Função responsável formatar o Destino do trajeto de entrega de uma encomenda

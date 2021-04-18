@@ -12,7 +12,7 @@ interface RequestOptions {
 
 function request(url: string, options: RequestOptions): Promise<any> {
   return fetch(url, options)
-    .then((res) => {
+    .then(res => {
       options.agent = getAgent(url);
       options.timeout = 0;
       if (!res.ok) throw new Error(res.statusText);
@@ -20,7 +20,7 @@ function request(url: string, options: RequestOptions): Promise<any> {
         return res.arrayBuffer();
       else return res.json();
     })
-    .catch((err) => new Error(`${url} gerou um erro ${err}`));
+    .catch(err => new Error(`${url} gerou um erro ${err}`));
 }
 
 function getAgent(_parsedURL: string): any {
