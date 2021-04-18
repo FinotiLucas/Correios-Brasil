@@ -338,7 +338,7 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 - N = não **PADRÃO**
 
 
-### 🚀 O que está em desenvolvimento ?
+### O que está em desenvolvimento ?
 
 - Receber respostas de multiplas API's e retornar a primeira resposta 🟡.
 
@@ -372,7 +372,7 @@ Copyright (c) 2020 Lucas Finoti
 
 
 
-## Autor
+## 🚀 Autor
 
-| [<img src="https://avatars0.githubusercontent.com/u/42899930?v=3&s=115"><br><sub>@finotilucas</sub>](https://github.com/finotilucas) |  |
+| [<img src="https://avatars0.githubusercontent.com/u/42899930?v=3&s=115"><br><sub>@finotilucas</sub>](https://github.com/finotilucas) |
 |--|--|
