@@ -1,0 +1,18 @@
+{
+  "input": "./lib/index.ts",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./lib",
+    "forceConsistentCasingInFileNames": true,
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "target": "ES5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true
+  },
+  "lib": ["es2015"],
+  "include": ["lib/**/*"],
+  "exclude": ["node_modules", "dist/**/*", "rollup.config.js"]
+}

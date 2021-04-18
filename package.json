@@ -1,10 +1,20 @@
 {
   "name": "correios-brasil",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node ./lib/index.ts",
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts",
+    "declarations": "tsc -emitDeclarationOnly --d",
+    "build": "rimraf dist && mkdirp dist && rollup -c",
+    "postbuild": "dts-bundle-generator -o ./dist/index.d.ts ./lib/index.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "keywords": [
     "entrega",
@@ -38,10 +48,35 @@
   "author": "Lucas Lima Finoti <lucas.finoti@protonmail.com>",
   "license": "Apache License 2.0",
   "dependencies": {
+    "@types/chai": "^4.2.16",
+    "@types/cheerio": "^0.22.28",
+    "@types/iconv-lite": "^0.0.1",
+    "@types/node-fetch": "^2.5.10",
     "cheerio": "^1.0.0-rc.5",
+    "esm": "^3.2.25",
     "iconv-lite": "^0.6.2",
     "node-fetch": "^2.6.1",
     "xml-js": "^1.6.11"
   },
-  "types": "./lib/correios-brasil.d.ts"
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/jest": "^26.0.22",
+    "@types/mocha": "^8.2.2",
+    "chai": "^4.3.4",
+    "dts-bundle-generator": "^5.9.0",
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
+    "mocha": "^8.3.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-dts": "^3.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.2.4"
+  },
+  "types": "dist/index.d.js"
 }

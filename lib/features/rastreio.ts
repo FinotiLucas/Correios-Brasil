@@ -1,33 +1,33 @@
-const cheerio = require('cheerio');
-
-const { request } = require('../utils/request');
-const { convertArrayBufferToString } = require('../utils/parser');
-const { URL } = require('../utils/URL');
-const {
+import cheerio from 'cheerio';
+import { request } from '../utils/request';
+import { convertArrayBufferToString } from '../utils/parser';
+import URL from '../utils/URL';
+import {
   formatStatus,
   formatDateTime,
   formatLocal,
   formatOrigin,
   formatDestiny,
-} = require('../utils/formatter');
+} from '../utils/formatter';
 
-function rastrearEncomendas(codes) {
+import { RastreioResponse, RastreioEvent } from '../interfaces';
+
+function rastrearEncomendas(
+  codes: Array<String>,
+): Promise<void | RastreioResponse> {
   /**
    * @param {Array[String]} codes
    * Função responsável por realizar a consulta de uma ou mais encomendas
    * com base nas informações do site linkcorreios
    */
 
-  const response = Promise.all(
-    codes.map((code) => fetchTrackingService(code)),
-  ).then((object) => {
-    const { ...events } = object;
-    return events;
-  });
+  const response: any = Promise.all(
+    codes.map((code: string) => fetchTrackingService(code)),
+  ).then((object) => object);
   return response;
 }
 
-function fetchTrackingService(code) {
+function fetchTrackingService(code: string): Promise<void | RastreioEvent> {
   return new Promise((resolve, reject) => {
     request(`${URL.BASERASTREIO}/${code}`, {
       method: 'GET',
@@ -44,15 +44,15 @@ function fetchTrackingService(code) {
   });
 }
 
-function convertHtmlToJson(htmlString) {
+function convertHtmlToJson(htmlString: string): RastreioEvent {
   const html = cheerio.load(htmlString);
   const elemArray = [];
   html('ul.linha_status').each((_, elem) => {
     elemArray.push(elem);
   });
   elemArray.shift();
-  const elemMap = elemArray.map((elem) => {
-    const mapObj = {};
+  const elemMap: any = elemArray.map((elem) => {
+    const mapObj = {} as RastreioEvent; // Mudar
     html(elem)
       .find('li')
       .each((_, liElem) => {
@@ -74,4 +74,5 @@ function convertHtmlToJson(htmlString) {
   return elemMap.reverse();
 }
 
-module.exports = { rastrearEncomendas };
+export default rastrearEncomendas;
+//'LB437050160SE', 'QB226569069BR'
