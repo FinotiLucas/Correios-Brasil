@@ -4,15 +4,18 @@
     "declaration": true,
     "declarationDir": "./lib",
     "forceConsistentCasingInFileNames": true,
-    "module": "CommonJS",
+    "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es2015",
+    "target": "ES6",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "./dist",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true
   },
-  "lib": ["es2015"],
+  "lib": ["ES6"],
   "include": ["lib/**/*"],
   "exclude": ["node_modules", "dist/**/*", "rollup.config.js"]
 }

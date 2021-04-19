@@ -40,7 +40,7 @@ describe('Parsers', () => {
   });
 
   it('Teste para converter ArrayBuffer para String', () => {
-    const htmlPath = path.join(__dirname, 'static', 'rastreio.html');
+    const htmlPath = path.join(__dirname, 'static', 'rastreio.txt');
 
     fs.readFile(htmlPath, 'utf-8', (err, buffer) => {
       const arrayBuffer = stringToBuffer(buffer);
@@ -49,7 +49,7 @@ describe('Parsers', () => {
       expect(converted).to.be.an('string');
     });
 
-    function stringToBuffer(str) {
+    function stringToBuffer(str: string) {
       const buf = new ArrayBuffer(str.length * 2);
       const bufView = new Uint16Array(buf);
 

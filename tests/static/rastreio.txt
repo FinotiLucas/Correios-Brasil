@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Rastreamento de Objetos - Correios</title>
+        <meta name="description" content="Rastreie suas encomendas/objetos do Correio ou tenha o rastreamento do Correio personalizado para sua loja">
+        <meta name="keywords" content="rastramento,correios,status,pedido atrasado,link rastreamento correios">
+        <meta name="author" content="Rastreamento linkcorreios.com.br">
+
+
+        <base href="https://www.linkcorreios.com.br/" />
+
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+   <!--  <link href="css/bootstrap.css" rel="stylesheet"> -->
+    <link href="css/style.css?id=42" rel="stylesheet">
+        <link href="css/vendors.css" rel="stylesheet">
+        <link href="css/blog.css" rel="stylesheet">
+
+
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+
+        ga('create', 'UA-79364418-1', 'auto');
+        ga('set', 'dimension1', '');
+        ga('send', 'pageview');
+
+</script><script data-ad-client="ca-pub-9841742704577475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+
+        <div id="page">
+
+                <header class="header menu_fixed sticky"> 
+
+                        <div id="logo">
+                                <a href="index.php" title="Início linkcorreios.com.br">
+
+                                        <img src="images/logo2.png" width="220" height="40" class="logo_normal" alt="Logo Rastreamento Correios" >
+                                        <img src="images/logo.png"  width="220" height="40" class="logo_sticky" alt="Rastreamento Correios - Link Correios Logo" > 
+                                </a>
+                        </div>
+
+
+                                                <ul id="top_menu">
+                                <li><a href="https://www.linkcorreios.com.br/PW639018542BR#envie_por_email" class="btn_add">Envie por e-mail</a></li>
+                        </ul>
+
+
+                        <a href="#menu" class="btn_mobile">
+                                <div class="hamburger hamburger--spin" id="hamburger">
+                                        <div class="hamburger-box">
+                                                <div class="hamburger-inner"></div>
+                                        </div>
+                                </div>
+                        </a>
+                        <nav id="menu" class="main-menu">
+                                <ul>
+                                        <li><span><a href="https://www.linkcorreios.com.br/">Início</a></span></li>
+                                        <li><span><a href="sobre">Sobre</a></span></li>
+                                        <li><span><a href="preco">Preços</a></span></li>
+                                        <li><span><a href="prazo-de-entrega">Prazos</a></span></li>
+                                        <li><span><a href="personalize">Personalize</a></span></li>
+                                        <li><span><a href="faq">Perguntas Frequentes</a></span></li>
+                                        <li><span><a href="buscar-cep">CEP</a></span></li>
+                                        <li><span><a href="contato">Contato</a></span></li>
+
+                                </ul>
+                        </nav>
+                </header>
+                <!-- /header -->
+
+                <main>
+                        <div class="sub_header_in d-none d-sm-block" style="margin-top: 73px;"><div class="container"><h1><span style="font-weight: normal">Rastreamento de Objeto - </span>PW639018542BR</h1></div></div><div class="sub_header_in d-block d-sm-none text-center" style="margin-top: 50px; height: 42px; padding: 10px 0"><div class="container"><h1><span style="font-weight: normal">Rastreamento - </span>PW639018542BR</h1></div></div>
+
+
+
+                                <div class="row">
+                                        <div class="col-lg-12 text-center" style="margin-top: 5px">
+
+
+                        <!--8-.70-->
+                                        </div>
+                                </div>
+
+
+
+
+
+                        <div class="container margin_30_5">
+                                <div class="row">
+                                        <div class="col-lg-8 ">
+
+
+
+
+
+        <div class="accordion_2">
+                <div class="card">
+                        <div class="card-header" role="tab" style="border: 1px solid #28a745;">
+
+                        <div class="main_title_3">
+                                <h2>Útimo Status do Objeto: PW639018542BR</h2>
+                                <p></p>
+                        </div>
+                                <ul class="linha_status m-0" style="border-bottom: 0;"  style="">
+<li>Status: <b>Objeto entregue ao destinatário</b></li>
+<li>Data  : 17/04/2020 | Hora: 11:12</li>
+
+                                          <li>Local: CDD ITAGUAI - Itaguai / RJ</li></ul>
+
+                        </div>
+                </div>
+        </div>
+
+
+        <div class="accordion_2">
+                <ul class="share-buttons">
+                        <!-- <li><a class="gplus-share" href="#0"><img height="20px" src="img/whatsapp-ico.png" class="mr-1"> Compartilhar - WhatsApp</a></li> -->
+
+                        <li><a class="twitter-share" href="https://www.linkcorreios.com.br/PW639018542BR#envie_por_email"><i class="icon-email"></i> Enviar por E-mail</a></li>
+                        <li><a target="_blank" class="gplus-share" href="https://wa.me/?text=Ol%C3%A1.+Clique+no+link+para+rastrear+o+objeto+c%C3%B3digo+PW639018542BR%0Ahttps%3A%2F%2Fwww.linkcorreios.com.br%2FPW639018542BR%3Fw%3D1"><i class="icon-phone-circled"></i> Enviar por Whats</a></li>
+
+                </ul>
+        </div>
+
+
+
+<!--    <br> -->
+        <div class="singlepost">
+                <div class="main_title_3">
+                        <span><em></em></span>
+                        <h2>Histórico do Objeto</h2>
+                        <p>Detalhes sobre o trajeto do objeto PW639018542BR</p>
+                </div>
+                <br>
+
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto entregue ao destinatário</b></li>
+<li>Data  : 17/04/2020 | Hora: 11:12</li>
+
+                                          <li>Local: CDD ITAGUAI - Itaguai / RJ</li></ul>
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto saiu para entrega ao destinatário</b></li>
+<li>Data  : 17/04/2020 | Hora: 08:06</li>
+
+                                          <li>Local: CDD ITAGUAI - Itaguai / RJ</li></ul>
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto encaminhado </b></li>
+<li>Data  : 16/04/2020 | Hora: 10:04</li>
+
+
+<li>Origem: CTE BENFICA - Rio De Janeiro / RJ</li>
+<li>Destino: CDD ITAGUAI - Itaguai / RJ</li></ul>
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto encaminhado </b></li>
+<li>Data  : 15/04/2020 | Hora: 22:18</li>
+
+
+<li>Origem: CTE CAJAMAR - Cajamar / SP</li>
+<li>Destino: CTE BENFICA - Rio De Janeiro / RJ</li></ul>
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto encaminhado </b></li>
+<li>Data  : 15/04/2020 | Hora: 09:03</li>
+
+
+<li>Origem: AGF VILA PREL - Sao Paulo / SP</li>
+<li>Destino: CTE CAJAMAR - Cajamar / SP</li></ul>
+<ul class="linha_status" style="">
+<li>Status: <b>Objeto postado</b></li>
+<li>Data  : 14/04/2020 | Hora: 14:28</li>
+
+                                          <li>Local: AGF VILA PREL - Sao Paulo / SP</li></ul>           <br>
+        </div>
+
+
+
+
+                <a name="envie_por_email">
+                <div class="row"><p></p></div>
+
+                <h5>Envie o rastreamento PW639018542BR para um e-mail.<br><br></h5>
+
+
+                <form name="envia_rastreamento" id="envia_rastreamento" action="ceps/envia-rastreamento" method="post">
+
+                        <div class="row">
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                                <input type="text" name="email_origem" id="email_origem" class="form-control" placeholder="Remetente - Seu E-mail">
+                                        </div>
+                                </div>
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                                <input type="text" name="email_destino" id="email_destino" class="form-control" placeholder="Destinatário - Para o E-mail">
+                                        </div>
+                                </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                                <textarea class="form-control" name="msg" id="msg" rows="6" placeholder="Segue o rastreamento do objeto: PW639018542BR"></textarea>
+                        </div>
+
+
+                        <input type="hidden" class="form-control" name="objeto" id="objeto" value="PW639018542BR">
+
+                        <div class="form-group text-right">
+
+                                <input type="submit" class="btn_1 add_bottom_15 pull-left" name="bt_rastrear_email" id="bt_rastrear_email" value="Enviar">
+                        </div>
+
+                </form>
+
+                <hr>
+
+
+
+
+
+
+<a name="calcule-prazo-entrega">
+
+<h5>Estimativa de entrega do objeto PW639018542BR<br><br></h5>
+
+<form action="ceps/calculo-prazo-entrega-correios" method="get">
+
+        <div class="row">
+                <div class="col-lg-4">
+                        <div class="form-group">
+                                <input type="text" name="cep_origem" id="cep_origem" class="form-control" placeholder="CEP Origem">
+                        </div>
+                </div>
+
+
+                <div class="col-lg-4">
+                        <div class="form-group">
+                                <input type="text" name="cep_destino" id="cep_destino" class="form-control" placeholder="CEP Destino">
+                        </div>
+                </div>
+
+
+                <div class="col-lg-4 text-right">
+                        <div class="form-group">
+                                <input type="submit" class="btn_1 add_bottom_15" name="bt_calcular_prazo" id="bt_calcular_prazo" value="Calcular Prazo">
+                        </div>
+                </div>
+
+        </div>
+
+</form>
+                                        </div>
+                                        <!-- /col -->
+
+                                        <div class="col-lg-1">
+
+                                        </div>
+
+                                        <aside class="col-lg-3">
+<div class="widget search_blog">
+        <div class="form-group">
+                <form method="get" action="./">
+                <input type="text" name="id2" id="id2" class="form-control" placeholder="Código do Objeto">
+                <span><input style="cursor: pointer;"  type="submit" value="Rastrear"></span>
+        </form>
+        </div>
+</div>
+<!-- /widget -->
+<div class="widget">
+        <div class="widget-title">
+                <h4>Avisos e Informações</h4>
+        </div>
+        <ul class="comments-list">
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/coronavirus.html" title="COVID 19 - Saiba como fica o atendimento dos Correios">
+                                        <img src="img/blog/coronavirus.png" alt="COVID 19 - Saiba como fica o atendimento dos Correios">
+                                </a>
+                        </div>
+                        <small>Informações</small>
+                        <h3><a href="blog/coronavirus.html" title="COVID 19 - Saiba como fica o atendimento dos Correios">COVID 19 - Saiba como fica o atendimento dos Correios</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/status_correios.html" title="Status dos Objetos e seus significados">
+                                        <img src="img/blog/status.png" alt="Status dos Objetos e seus significados">
+                                </a>
+                        </div>
+                        <small>Informações</small>
+                        <h3><a href="blog/status_correios.html" title="Status dos Objetos e seus significados">Status dos Objetos e seus significados</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/siglas_correios.html" title="Siglas dos Objetos dos Correios">
+                                        <img src="img/blog/siglas.png" alt="Siglas dos Objetos dos Correios">
+                                </a>
+                        </div>
+                        <small>Informações</small>
+                        <h3><a href="blog/siglas_correios.html" title="Siglas dos Objetos dos Correios">Siglas dos Objetos dos Correios</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/rastreamento_jadlog.html" title="Rastreamento Jadlog">
+                                        <img src="img/blog/jadlog.png" alt="Rastreamento Jadlog">
+                                </a>
+                        </div>
+                        <small>Rastreamento</small>
+                        <h3><a href="blog/rastreamento_jadlog.html" title="Rastreamento Jadlog">Rastreamento Jadlog</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/obrigatoriedade-cnpj-cpf-em-importacao.html" title="Obrigatoriedade de CPF e CNPJ.">
+                                        <img src="img/blog/importacao.jpg" alt="Obrigatoriedade de CPF e CNPJ.">
+                                </a>
+                        </div>
+                        <small>Importação</small>
+                        <h3><a href="blog/obrigatoriedade-cnpj-cpf-em-importacao.html" title="Obrigatoriedade de CPF e CNPJ.">Obrigatoriedade de CPF e CNPJ.</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/portal-importador.html" title="Portal do Importador - ID Correios">
+                                        <img src="img/blog/portal-importador.jpg" alt="Portal do Importador - ID Correios">
+                                </a>
+                        </div>
+                        <small>Importação</small>
+                        <h3><a href="blog/portal-importador.html" title="Portal do Importador - ID Correios">Portal do Importador - ID Correios</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/declaracao-conteudo.html" title="Declaração de Conteúdo">
+                                        <img src="img/blog/declaracao.jpg" alt="Declaração de Conteúdo">
+                                </a>
+                        </div>
+                        <small>Postagem</small>
+                        <h3><a href="blog/declaracao-conteudo.html" title="Declaração de Conteúdo">Declaração de Conteúdo</a></h3>
+                </li>
+
+
+                <li>
+                        <div class="alignleft">
+                                <a  href="blog/restricao-entrega.html" title="Restriçao de Entrega">
+                                        <img src="img/blog/restricao.jpg" alt="Restriçao de Entrega">
+                                </a>
+                        </div>
+                        <small>Rastreamento</small>
+                        <h3><a href="blog/restricao-entrega.html" title="Restriçao de Entrega">Restriçao de Entrega</a></h3>
+                </li>
+
+
+
+        </ul>
+</div>
+
+
+
+
+<div class="widget">
+        <div class="widget-title">
+                <h4>Úteis</h4>
+        </div>
+        <ul class="cats">
+                <li><a target="_blank" title="Rastremento de encomendas JADLOG" href="https://vaichegar.com.br">Rastreamento JADLOG</a></li>
+                <li><a title="Declaração de Conteúdo" href="blog/declaracao-conteudo.html">Declaração de Conteúdo</a></li>
+                <li><a title="Buscar CEP" href="buscar-cep">Buscar CEP</a></li>
+                <li><a title="FAQ - Perguntas Frequentes" href="faq">Perguntas Frequentes</a></li>
+        </ul>
+</div>
+
+<div class="widget">
+        <div class="widget-title">
+                <h4>Downloads</h4>
+        </div>
+        <ul class="cats">
+                <li><a target="_blank" href="downloads/declaracao-conteudo-correios-a4.pdf">Declaração de Conteúdo (A4)</a></li>
+                <li><a target="_blank" href="downloads/declaracao-conteudo-correios-a5.pdf">Declaração de Conteúdo (A5)</a></li>
+        </ul>
+</div>
+
+<div class="widget">
+        <div class="widget-title">
+                <h4>Termos mais Buscados</h4>
+        </div>
+        <div class="tags">
+                <a href="faq#area-risco">Área de Risco</a>
+                <a target="_blank" href="https://www.correios.com.br/encomendas-logistica/minhas-importacoes/minhas-importacoes">Minhas importações</a>
+                <a href="faq#objeto-atrasado">Objeto Atrasado</a>
+                <a title="Buscar CEP" href="buscar-cep">Buscar CEP</a>
+        </div>
+</div>
+
+<div class="widget">
+        <div class="widget-title">
+                <h4>CEPs mais buscados</h4>
+        </div>
+        <div class="tags">
+
+                <a href="ceps/buscar-cep?cep_consulta=77403900">77403900</a><a href="ceps/buscar-cep?cep_consulta=01016900">01016900</a><a href="ceps/buscar-cep?cep_consulta=70040912">70040912</a><a href="ceps/buscar-cep?cep_consulta=14040905">14040905</a><a href="ceps/buscar-cep?cep_consulta=77001904">77001904</a><a href="ceps/buscar-cep?cep_consulta=79320900">79320900</a><a href="ceps/buscar-cep?cep_consulta=05652900">05652900</a><a href="ceps/buscar-cep?cep_consulta=65636901">65636901</a><a href="ceps/buscar-cep?cep_consulta=31270902">31270902</a>
+        </div>
+</div>
+
+
+</aside>                                </div>
+                                <!-- /row -->
+                        </div>
+
+
+
+        </main>
+        <!-- /main -->
+
+        <footer class="plus_border">
+                <div class="container margin_60_35">
+                        <div class="row">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <h3 data-target="#collapse_ft_1">Acesso Rápido</h3>
+                                        <div class="collapse dont-collapse-sm" id="collapse_ft_1">
+                                                <ul class="links">
+                                                        <li><a target="_blank" href="https://vaichegar.com.br/">JADLOG - Rastreamento</a></li>
+                                                        <li><a href="sobre">Sobre</a></li>
+                                                        <li><a href="faq">FAQ</a></li>
+                                                        <li><a href="buscar-cep">Consultar CEP</a></li>
+
+                                                </ul>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <h3 data-target="#collapse_ft_2"><br></h3>
+                                        <div class="collapse dont-collapse-sm" id="collapse_ft_2">
+                                                <ul class="links">
+                                                        <li><a href="prazo-de-entrega">Prazos</a></li>
+                                                        <li><a href="preco">Preços</a></li>
+                                                        <li><a href="personalize">Personalize</a></li>
+
+                                                </ul>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <h3 data-target="#collapse_ft_3">Contato</h3>
+                                        <div class="collapse dont-collapse-sm" id="collapse_ft_3">
+                                                <ul class="contacts">
+
+                                                        <li><i class="ti-email" style="margin-top: 3px !important"></i><a href="contato">contato@linkcorreios.com.br</a></li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <h3 data-target="#collapse_ft_4">Receba Novidades</h3>
+                                        <div class="collapse dont-collapse-sm" id="collapse_ft_4">
+                                                <div id="newsletter">
+                                                        <div id="message-newsletter"></div>
+                                                        <form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+                                                                <div class="form-group">
+                                                                        <input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Seu e-mail">
+                                                                        <input type="submit" value="Enviar" id="submit-newsletter">
+                                                                </div>
+                                                        </form>
+                                                </div>
+                                                <div class="follow_us text-center">
+                                                        <br>
+                                                        <a target="_blank" href="https://www.google.com/transparencyreport/safebrowsing/diagnostic/?hl=pt-BR#url=https://www.linkcorreios.com.br">
+                                                                <img alt="Site Seguro" height="50px" src="images/google-site-seguro.png">
+                                                        </a>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- /row-->
+                        <hr>
+                        <div class="row">
+                                <div class="col-lg-6">
+                                        <ul id="additional_links">
+                                                <li><span>O maior e melhor sistema de rastreamento logístico da America Latina</span></li>
+                                        </ul>
+                                </div>
+                                <div class="col-lg-6">
+                                        <ul id="additional_links">
+
+                                                <li><span>© 2019 LinkCorreios.com.br</span></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </div>
+        </footer>
+        <!--/footer-->
+</div>
+<!-- page -->
+
+
+<div id="toTop"></div><!-- Back to top button -->
+
+<!-- COMMON SCRIPTS -->
+<script src="js/common_scripts.js"></script>
+<script src="js/functions.js"></script>
+<script src="assets/validate.js"></script>
+
+
+
+
+</body>
+</html>

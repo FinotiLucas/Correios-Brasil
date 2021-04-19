@@ -46,8 +46,8 @@ function fetchTrackingService(code: string): Promise<void | RastreioEvent> {
 
 function convertHtmlToJson(htmlString: string): RastreioEvent {
   const html = cheerio.load(htmlString);
-  const elemArray = [];
-  html('ul.linha_status').each((_, elem) => {
+  const elemArray: Array<RastreioEvent> = [];
+  html('ul.linha_status').each((_: any, elem: any) => {
     elemArray.push(elem);
   });
   elemArray.shift();
@@ -55,7 +55,7 @@ function convertHtmlToJson(htmlString: string): RastreioEvent {
     const mapObj = {} as RastreioEvent; // Mudar
     html(elem)
       .find('li')
-      .each((_, liElem) => {
+      .each((_: any, liElem: any) => {
         const text = html(liElem).text();
         if (text) {
           if (text.includes('Status')) mapObj.status = formatStatus(text);
