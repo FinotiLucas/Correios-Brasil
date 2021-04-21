@@ -1,4 +1,4 @@
-# Correios Brasil -- VERSÃO 2.2.0
+# Correios Brasil -- VERSÃO 2.2.0+1
 
 <h4  align="center">
 
@@ -59,7 +59,7 @@ Por padrão essa bibilioteca inclui uma definição de tipo para o Typescript.
 Para utilizá-la, basta importar da seguinte maneira.
 
 ```typescript
-import { correiosBrasil } from 'correios-brasil';
+import {calcularPrecoPrazo, consultarCep, rastrearEncomendas} from 'correios-brasil';
 ```
 
 ## Como consultar um CEP

@@ -6,7 +6,7 @@
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "esModuleInterop": true,
-    "target": "ES6",
+    "target": "es5",
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "./dist",
@@ -15,7 +15,7 @@
     "removeComments": true,
     "preserveConstEnums": true
   },
-  "lib": ["ES6"],
+  "lib": ["es5"],
   "include": ["lib/**/*"],
   "exclude": ["node_modules", "dist/**/*", "rollup.config.js"]
 }

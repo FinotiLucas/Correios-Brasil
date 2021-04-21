@@ -1,4 +1,4 @@
-import { PrecoPrazoRequest, PrecoPrazoResponse } from '../Interfaces';
+import { PrecoPrazoRequest, PrecoPrazoResponse } from '../interfaces';
 /**
  *
  * @param {PrecoPrazoRequest} precoPrazo

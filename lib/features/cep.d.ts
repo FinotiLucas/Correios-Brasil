@@ -1,4 +1,4 @@
-import { CepResponse } from '../Interfaces';
+import { CepResponse } from '../interfaces';
 /**
  * @param {string} cep
  */

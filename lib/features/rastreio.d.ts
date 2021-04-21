@@ -1,4 +1,4 @@
-import { RastreioResponse } from '../Interfaces';
+import { RastreioResponse } from '../interfaces';
 /**
  *
  * @param {string} code

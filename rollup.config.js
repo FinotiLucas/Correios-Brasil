@@ -12,17 +12,19 @@ export default [
       {
         file: pkg.main,
         format: 'cjs',
+        sourcemap: true
       },
       {
         file: pkg.module,
         format: 'es',
+        sourcemap: true
       },
     ],
     external: [...Object.keys(pkg.dependencies || {})],
     plugins: [
       resolve(),
       typescript({
-        module: 'CommonJS',
+        module: 'esnext',
         tsconfig: './tsconfig.json',
         sourceMap: true,
       }),
