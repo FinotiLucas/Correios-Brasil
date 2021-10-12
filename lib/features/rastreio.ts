@@ -75,4 +75,3 @@ function convertHtmlToJson(htmlString: string): RastreioEvent {
 }
 
 export default rastrearEncomendas;
-//'LB437050160SE', 'QB226569069BR'

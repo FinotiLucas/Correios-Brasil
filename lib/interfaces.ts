@@ -38,7 +38,20 @@ export interface PrecoPrazoEvent {
 }
 
 export interface PrecoPrazoResponse {
-  [name: string]: PrecoPrazoEvent;
+  [name: string]: {
+    Codigo: string;
+    Valor: string;
+    PrazoEntrega: string;
+    ValorSemAdicionais: string;
+    ValorMaoPropria: string;
+    ValorAvisoRecebimento: string;
+    ValorDeclarado: string;
+    EntregaDomiciliar: string;
+    EntregaSabado: string;
+    obsFim: string;
+    Erro: string;
+    MsgErro: string;
+  };
 }
 
 export interface RastreioEvent {
@@ -51,5 +64,12 @@ export interface RastreioEvent {
 }
 
 export interface RastreioResponse {
-  [name: string]: RastreioEvent;
+  [name: string]: {
+    status: string;
+    data: string;
+    hora: string;
+    origem?: string;
+    destino?: string;
+    local?: string;
+  };
 }
