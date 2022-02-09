@@ -53,6 +53,7 @@ function fetchPrecoPrazo(precoPrazo: PrecoPrazoRequest, code: string) {
       headers: {
         'content-type': 'application/json',
       },
+      responseType: 'arraybuffer',
     }).then((arrayBuffer: ArrayBuffer) => {
       const rawJson = convertXMLStringToJson(
         convertArrayBufferToString(arrayBuffer, 'iso-8859-1'),
