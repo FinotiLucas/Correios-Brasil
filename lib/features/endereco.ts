@@ -14,18 +14,23 @@ function consultarEndereco(uf: string, cidade: string, logradouro: string): Prom
    * base no serviço VIACEP do IBGE
    */
 
-  return new Promise((resolve, reject) =>
+  return new Promise((resolve, reject) => {
+    if (cidade.length < 3) {
+      reject(Error('Cidade precisa ter no mínimo 3 caracteres'));
+    }
+    if (logradouro.length < 3) {
+      reject(Error('Logradouro precisa ter no mínimo 3 caracteres'));
+    }
     request(`${URL.BASECEP}/${uf}/${cidade}/${logradouro}/json`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
       },
     }).then(body => {
-      console.log(body)
       if (body.erro) reject(Error(`Requisição inválida`));
       return resolve(body);
-    }),
-  );
+    })
+  });
 }
 
 export default consultarEndereco;
