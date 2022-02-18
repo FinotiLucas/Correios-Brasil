@@ -1,4 +1,4 @@
-# Correios Brasil -- VERSÃO 2.2.2
+# Correios Brasil -- VERSÃO 2.3.0
 
 <h4  align="center">
 
@@ -90,6 +90,51 @@ consultarCep(cep).then((response) => {
   ddd: '21',
   siafi: '6001'
 }
+```
+
+## Como consultar um endereço
+
+```javascript
+const { consultarEndereco } = require('correios-brasil');
+
+const uf = 'MG'; // sigla do estado
+const cidade = 'Lagoa Sant'; // pode ser parte para realizar a busca
+const logradouro = 'Rua Pint'; // pode ser parte do logradouro
+
+consultarCep(uf, cidade, logradoudo).then((response) => {
+  console.log(response);
+});
+```
+
+### Resposta
+
+```javascript
+[
+  {
+    "cep": "33231-591",
+    "logradouro": "Rua Pinto Alves",
+    "complemento": "",
+    "bairro": "Vila José Fagundes",
+    "localidade": "Lagoa Santa",
+    "uf": "MG",
+    "ibge": "3137601",
+    "gia": "",
+    "ddd": "31",
+    "siafi": "4751"
+  },
+  {
+    "cep": "33230-270",
+    "logradouro": "Rua Pinto Alves",
+    "complemento": "",
+    "bairro": "Vila Pinto Coelho",
+    "localidade": "Lagoa Santa",
+    "uf": "MG",
+    "ibge": "3137601",
+    "gia": "",
+    "ddd": "31",
+    "siafi": "4751"
+  }
+]
 ```
 
 ## Como consultar o preço e o prazo de entrega de uma encomenda

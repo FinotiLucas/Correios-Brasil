@@ -15,11 +15,8 @@ interface RequestOptions {
 async function request(url: string, options: RequestOptions): Promise<any> {
   return axios({ ...options, url: url })
     .then(async (res: any) => {
-      console.log(res.headers['content-type']);
       if (!res.status) throw new Error(res.statusText);
-      return res.data.catch(
-        (err: any) => new Error(`${url} gerou um erro ${err}`),
-      );
+      return res.data
     })
     .catch(function (error) {
       return new Error(error);
