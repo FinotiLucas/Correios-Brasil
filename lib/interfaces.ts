@@ -10,6 +10,21 @@ export interface CepResponse {
   gia: string;
 }
 
+export interface EnderecoResponse {
+  [name: string]: {
+    cep: string,
+    logradouro: string,
+    complemento: string,
+    bairro: string,
+    localidade: string,
+    uf: string,
+    ibge: number,
+    gia: string,
+    ddd: number,
+    siafi: number,
+  }
+}
+
 export interface PrecoPrazoRequest {
   sCepOrigem: string;
   sCepDestino: string;
