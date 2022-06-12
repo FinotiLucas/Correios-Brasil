@@ -39,7 +39,7 @@ describe('Parsers', () => {
     });
   });
 
-  it('Teste para converter ArrayBuffer para String', () => {
+  /*it('Teste para converter ArrayBuffer para String', () => {
     const htmlPath = path.join(__dirname, 'static', 'rastreio.txt');
 
     fs.readFile(htmlPath, 'utf-8', (err, buffer) => {
@@ -62,5 +62,5 @@ describe('Parsers', () => {
       }
       return buf;
     }
-  });
+  });*/
 });
