@@ -20,6 +20,12 @@ export interface PrecoPrazoRequest {
   nVlLargura: string;
   nCdServico: Array<string>;
   nVlDiametro: string;
+  nCdEmpresa?: string;
+  sDsSenha?: string;
+  sCdMaoPropria?: string;
+  nVlValorDeclarado?: string | number;
+  sCdAvisoRecebimento?: string;
+  nIndicaCalculo?: string | number;
 }
 
 export interface PrecoPrazoEvent {

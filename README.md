@@ -1,4 +1,4 @@
-# Correios Brasil -- VERSÃO 2.2.2
+# Correios Brasil -- VERSÃO 3.0.0
 
 <h4  align="center">
 
@@ -59,7 +59,11 @@ Por padrão essa bibilioteca inclui uma definição de tipo para o Typescript.
 Para utilizá-la, basta importar da seguinte maneira.
 
 ```typescript
-import {calcularPrecoPrazo, consultarCep, rastrearEncomendas} from 'correios-brasil';
+import {
+  calcularPrecoPrazo,
+  consultarCep,
+  rastrearEncomendas,
+} from 'correios-brasil';
 ```
 
 ## Como consultar um CEP
@@ -70,7 +74,7 @@ const { consultarCep } = require('correios-brasil');
 // Cep pode ser String ou Number
 const cep = '21770200'; // 21770200 , '21770-200', '21770 200'.... qualquer um formato serve
 
-consultarCep(cep).then((response) => {
+consultarCep(cep).then(response => {
   console.log(response);
 });
 ```
@@ -110,7 +114,7 @@ let args = {
   nVlDiametro: '0',
 };
 
-calcularPrecoPrazo(args).then((response) => {
+calcularPrecoPrazo(args).then(response => {
   console.log(response);
 });
 ```
@@ -159,9 +163,9 @@ calcularPrecoPrazo(args).then((response) => {
 ```javascript
 const { rastrearEncomendas } = require('correios-brasil');
 
-let codRastreio = ['PW639018542BR', 'PW935793588BR']; // array de códigos de rastreios
+let codRastreio = ['OU341933668BR', 'LB290784401HK']; // array de códigos de rastreios
 
-rastrearEncomendas(codRastreio).then((response) => {
+rastrearEncomendas(codRastreio).then(response => {
   console.log(response);
 });
 ```
@@ -172,87 +176,88 @@ rastrearEncomendas(codRastreio).then((response) => {
 [
   [
     {
-      status: 'Objeto postado',
-      data: '14/04/2020',
-      hora: '14:28',
-      local: 'AGF VILA PREL - Sao Paulo / SP',
-    },
-    {
-      status: 'Objeto encaminhado',
-      data: '15/04/2020',
-      hora: '09:03',
-      origem: 'AGF VILA PREL - Sao Paulo / SP',
-      destino: 'CTE CAJAMAR - Cajamar / SP',
-    },
-    {
-      status: 'Objeto encaminhado',
-      data: '15/04/2020',
-      hora: '22:18',
-      origem: 'CTE CAJAMAR - Cajamar / SP',
-      destino: 'CTE BENFICA - Rio De Janeiro / RJ',
-    },
-    {
-      status: 'Objeto encaminhado',
-      data: '16/04/2020',
-      hora: '10:04',
-      origem: 'CTE BENFICA - Rio De Janeiro / RJ',
-      destino: 'CDD ITAGUAI - Itaguai / RJ',
-    },
-    {
-      status: 'Objeto saiu para entrega ao destinatário',
-      data: '17/04/2020',
-      hora: '08:06',
-      local: 'CDD ITAGUAI - Itaguai / RJ',
-    },
-    {
-      status: 'Objeto entregue ao destinatário',
-      data: '17/04/2020',
-      hora: '11:12',
-      local: 'CDD ITAGUAI - Itaguai / RJ',
+      codObjeto: 'OU341933668BR',
+      eventos: [Array],
+      modalidade: 'F',
+      tipoPostal: [Object],
+      habilitaAutoDeclaracao: false,
+      permiteEncargoImportacao: false,
+      habilitaPercorridaCarteiro: false,
+      bloqueioObjeto: false,
+      possuiLocker: false,
+      habilitaLocker: false,
+      habilitaCrowdshipping: false,
     },
   ],
-    [
-      {
-        status: 'Objeto postado após o horário limite da unidade',
-        data: '05/05/2020',
-        hora: '18:17',
-        local: 'AGF CIDADE DAS ROSAS - Sapiranga / RS',
-      },
-      {
-        status: 'Objeto encaminhado',
-        data: '05/05/2020',
-        hora: '18:29',
-        origem: 'AGF CIDADE DAS ROSAS - Sapiranga / RS',
-        destino: 'CTCE PORTO ALEGRE - Porto Alegre / RS',
-      },
-      {
-        status: 'Objeto encaminhado',
-        data: '09/05/2020',
-        hora: '03:05',
-        origem: 'CTE CAJAMAR - Cajamar / SP',
-        destino: 'CTE BENFICA - Rio De Janeiro / RJ',
-      },
-      {
-        status: 'Objeto encaminhado',
-        data: '12/05/2020',
-        hora: '13:54',
-        origem: 'CTE BENFICA - Rio De Janeiro / RJ',
-        destino: 'CDD ITAGUAI - Itaguai / RJ',
-      },
-      {
-        status: 'Objeto saiu para entrega ao destinatário',
-        data: '13/05/2020',
-        hora: '10:18',
-        local: 'CDD ITAGUAI - Itaguai / RJ',
-      },
-      {
-        status: 'Objeto entregue ao destinatário',
-        data: '13/05/2020',
-        hora: '13:22',
-        local: 'CDD ITAGUAI - Itaguai / RJ',
-      },
-    ];
-]
+  [
+    {
+      codObjeto: 'LB290784401HK',
+      eventos: [Array],
+      modalidade: 'V',
+      tipoPostal: [Object],
+      habilitaAutoDeclaracao: false,
+      permiteEncargoImportacao: false,
+      habilitaPercorridaCarteiro: false,
+      bloqueioObjeto: false,
+      possuiLocker: false,
+      habilitaLocker: false,
+      habilitaCrowdshipping: false,
+    },
+  ],
+];
+```
+
+### Detalhes dos eventos de rastreio
+
+```javascript
+const { rastrearEncomendas } = require('correios-brasil');
+
+let codRastreio = ['OU341933668BR', 'LB290784401HK']; // array de códigos de rastreios
+
+rastrearEncomendas(codRastreio).then(response => {
+  console.log(response[0].eventos.reverse());
+  // O reverse é apenas para organizarmos os dados do rastreio do mais antigo para o mais recente !
+});
+```
+
+### Resposta
+
+```javascript
+[
+  {
+    codigo: 'PO',
+    descricao: 'Objeto postado',
+    dtHrCriado: '2022-06-07T17:14:43',
+    tipo: '01',
+    unidade: { endereco: [Object], tipo: 'Agência dos Correios' },
+    urlIcone: '/public-resources/img/agencia-cor.png',
+  },
+  {
+    codigo: 'RO',
+    descricao: 'Objeto em trânsito - por favor aguarde',
+    dtHrCriado: '2022-06-07T18:17:02',
+    tipo: '01',
+    unidade: { endereco: [Object], tipo: 'Agência dos Correios' },
+    unidadeDestino: { endereco: [Object], tipo: 'Unidade de Tratamento' },
+    urlIcone: '/public-resources/img/caminhao-cor.png',
+  },
+  {
+    codigo: 'OEC',
+    descricao: 'Objeto saiu para entrega ao destinatário',
+    dtHrCriado: '2022-06-08T09:02:32',
+    tipo: '01',
+    unidade: { endereco: [Object], tipo: 'Unidade de Distribuição' },
+    urlIcone: '/public-resources/img/pre-atendimento-cor.png',
+  },
+  {
+    codigo: 'BDE',
+    descricao: 'Objeto entregue ao destinatário',
+    dtHrCriado: '2022-06-08T12:36:43',
+    tipo: '01',
+    unidade: { endereco: [Object], tipo: 'Unidade de Distribuição' },
+    urlIcone: '/public-resources/img/smile.png',
+  },
+];
 ```
 
 # Argumentos para a consulta da API
@@ -337,7 +342,6 @@ Indica se a encomenda será entregue com o serviço adicional mão própria
 
 - N = não **PADRÃO**
 
-
 ### O que está em desenvolvimento ?
 
 - Receber respostas de multiplas API's e retornar a primeira resposta 🟡.
@@ -361,18 +365,12 @@ Copyright (c) 2020 Lucas Finoti
 
 [license]: https://github.com/FinotiLucas/Correios-Brasil/blob/master/LICENSE
 
-
-
-
-
 ## 💪 Contribuidores
 
 | [<img src="https://avatars0.githubusercontent.com/u/42827195?v=3&s=115" width="115"><br><sub>@jonabf1</sub>](https://github.com/jonabf1) | [<img src="https://avatars0.githubusercontent.com/u/18602545?v=3&s=115" width="115"><br><sub>@francopan</sub>](https://github.com/francopan) |
-|--|--|
-
-
+| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 🚀 Autor
 
 | [<img src="https://avatars0.githubusercontent.com/u/42899930?v=3&s=115"><br><sub>@finotilucas</sub>](https://github.com/finotilucas) |
-|--|
+| ------------------------------------------------------------------------------------------------------------------------------------ |

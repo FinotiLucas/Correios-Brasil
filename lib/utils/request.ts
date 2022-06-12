@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import http from 'http';
 import https from 'https';
 import axios from 'axios';
@@ -12,17 +11,13 @@ interface RequestOptions {
   responseType?: any;
 }
 
-async function request(url: string, options: RequestOptions): Promise<any> {
-  return axios({ ...options, url: url })
-    .then(async (res: any) => {
-      console.log(res.headers['content-type']);
-      if (!res.status) throw new Error(res.statusText);
-      return res.data.catch(
-        (err: any) => new Error(`${url} gerou um erro ${err}`),
-      );
-    })
-    .catch(function (error) {
-      return new Error(error);
-    });
+async function request(url: string, options: RequestOptions) {
+  try {
+    let res = await axios({ ...options, url: url });
+    let data = res.data;
+    return data;
+  } catch (error) {
+    return new Error(error.response);
+  }
 }
 export { request };

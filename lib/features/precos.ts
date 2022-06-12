@@ -1,4 +1,3 @@
-import querystring from 'querystring';
 import URL from '../utils/URL';
 import { sanitization } from '../utils/validation';
 import { request } from '../utils/request';
@@ -14,7 +13,7 @@ import {
 
 function calcularPrecoPrazo(
   precoPrazo: PrecoPrazoRequest,
-): Promise<void | PrecoPrazoResponse> {
+): Promise<PrecoPrazoResponse> {
   /**
    * @param {Object} precoPrazo
    * Função responsável por realizar a consulta dos valores de entrega das
@@ -29,32 +28,37 @@ function calcularPrecoPrazo(
   return response;
 }
 
-function fetchPrecoPrazo(precoPrazo: PrecoPrazoRequest, code: string) {
-  delete precoPrazo.nCdServico;
-  return new Promise((resolve, reject) => {
+function fetchPrecoPrazo(p: PrecoPrazoRequest, code: string) {
+  delete p.nCdServico;
+  return new Promise(async (resolve, reject) => {
     const qs: any = {
-      ...precoPrazo,
+      ...p,
       ...{
         nCdServico: code,
-        sCepOrigem: sanitization(precoPrazo.sCepOrigem),
-        sCepDestino: sanitization(precoPrazo.sCepDestino),
-        nCdEmpresa: '',
-        sDsSenha: '',
-        sCdMaoPropria: 'n',
-        nVlValorDeclarado: 0,
-        sCdAvisoRecebimento: 'n',
+        sCepOrigem: sanitization(p.sCepOrigem),
+        sCepDestino: sanitization(p.sCepDestino),
+        nCdEmpresa: p.nCdEmpresa == undefined ? '' : p.nCdEmpresa,
+        sDsSenha: p.sDsSenha == undefined ? '' : p.sDsSenha,
+        sCdMaoPropria: p.sCdMaoPropria == undefined ? 'n' : p.sCdMaoPropria,
+        nVlValorDeclarado:
+          p.nVlValorDeclarado == undefined ? 0 : p.nVlValorDeclarado,
+        sCdAvisoRecebimento:
+          p.sCdAvisoRecebimento == undefined ? 'n' : p.sCdAvisoRecebimento,
         StrRetorno: 'xml',
-        nIndicaCalculo: 3,
+        nIndicaCalculo: p.nIndicaCalculo == undefined ? 3 : p.nIndicaCalculo,
       },
     };
 
-    return request(`${URL.BASECORREIOS}?${querystring.stringify(qs)}`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
+    return request(
+      `${URL.BASECORREIOS}?${new URLSearchParams(qs).toString()}`,
+      {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+        responseType: 'arraybuffer',
       },
-      responseType: 'arraybuffer',
-    }).then((arrayBuffer: ArrayBuffer) => {
+    ).then((arrayBuffer: ArrayBuffer) => {
       const rawJson = convertXMLStringToJson(
         convertArrayBufferToString(arrayBuffer, 'iso-8859-1'),
       );

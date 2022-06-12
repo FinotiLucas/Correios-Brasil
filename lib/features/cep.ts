@@ -6,7 +6,7 @@ import { request } from '../utils/request';
 import URL from '../utils/URL';
 import { CepResponse } from '../interfaces';
 
-function consultarCep(cep: string): Promise<void | CepResponse> {
+function consultarCep(cep: string): Promise<CepResponse> {
   /**
    * @param {string} cep
    * Função responsável por consultar as informações do CEP informado com

@@ -1,24 +1,10 @@
-import cheerio from 'cheerio';
 import { request } from '../utils/request';
-import { convertArrayBufferToString } from '../utils/parser';
 import URL from '../utils/URL';
-import {
-  formatStatus,
-  formatDateTime,
-  formatLocal,
-  formatOrigin,
-  formatDestiny,
-} from '../utils/formatter';
 
-import { RastreioResponse, RastreioEvent } from '../interfaces';
-
-function rastrearEncomendas(
-  codes: Array<string>,
-): Promise<void | RastreioResponse> {
+function rastrearEncomendas(codes: Array<string>): Promise<any> {
   /**
    * @param {Array[String]} codes
    * Função responsável por realizar a consulta de uma ou mais encomendas
-   * com base nas informações do site linkcorreios
    */
 
   const response: any = Promise.all(
@@ -27,51 +13,23 @@ function rastrearEncomendas(
   return response;
 }
 
-function fetchTrackingService(code: string): Promise<void | RastreioEvent> {
-  return new Promise((resolve, reject) => {
-    request(`${URL.BASERASTREIO}/${code}`, {
-      method: 'GET',
-      mode: 'no-cors',
-      headers: {
-        'content-type': 'text; charset=utf-8',
-        'cache-control': 'no-cache',
-      },
-    }).then(arrayBuffer => {
-      resolve(
-        convertHtmlToJson(convertArrayBufferToString(arrayBuffer, 'utf-8')),
-      );
-    });
-  });
-}
+function fetchTrackingService(code: string): Promise<any> {
+  /**
+   * @param {string} code
+   */
 
-function convertHtmlToJson(htmlString: string): RastreioEvent {
-  const html = cheerio.load(htmlString);
-  const elemArray: Array<RastreioEvent> = [];
-  html('ul.linha_status').each((_: any, elem: any) => {
-    elemArray.push(elem);
-  });
-  elemArray.shift();
-  const elemMap: any = elemArray.map(elem => {
-    const mapObj = {} as RastreioEvent; // Mudar
-    html(elem)
-      .find('li')
-      .each((_: any, liElem: any) => {
-        const text = html(liElem).text();
-        if (text) {
-          if (text.includes('Status')) mapObj.status = formatStatus(text);
-          if (text.includes('Data')) {
-            const dateTime = formatDateTime(text);
-            mapObj.data = dateTime[0];
-            mapObj.hora = dateTime[1];
-          }
-          if (text.includes('Local')) mapObj.local = formatLocal(text);
-          if (text.includes('Origem')) mapObj.origem = formatOrigin(text);
-          if (text.includes('Destino')) mapObj.destino = formatDestiny(text);
-        }
-      });
-    return mapObj;
-  });
-  return elemMap.reverse();
+  return new Promise((resolve, reject) =>
+    request(`${URL.PROXYAPP}/${code}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    }).then(body => {
+      if (body.erro)
+        reject(Error(`Code: ${code} não existe na base dos correios`));
+      return resolve(body.objetos[0]);
+    }),
+  );
 }
 
 export default rastrearEncomendas;
