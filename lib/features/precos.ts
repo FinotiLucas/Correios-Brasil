@@ -58,12 +58,18 @@ function fetchPrecoPrazo(p: PrecoPrazoRequest, code: string) {
         },
         responseType: 'arraybuffer',
       },
-    ).then((arrayBuffer: ArrayBuffer) => {
-      const rawJson = convertXMLStringToJson(
-        convertArrayBufferToString(arrayBuffer, 'iso-8859-1'),
-      );
-      resolve(convertJsonToPrazoPrecoResponse(rawJson.Servicos.cServico));
-    });
+    )
+      .then((arrayBuffer: ArrayBuffer) => {
+        const rawJson = convertXMLStringToJson(
+          convertArrayBufferToString(arrayBuffer, 'iso-8859-1'),
+        );
+        return resolve(
+          convertJsonToPrazoPrecoResponse(rawJson.Servicos.cServico),
+        );
+      })
+      .catch((error: any) => {
+        reject(error);
+      });
   });
 }
 

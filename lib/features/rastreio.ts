@@ -24,11 +24,13 @@ function fetchTrackingService(code: string): Promise<any> {
       headers: {
         'content-type': 'application/json',
       },
-    }).then(body => {
-      if (body.erro)
-        reject(Error(`Code: ${code} não existe na base dos correios`));
-      return resolve(body.objetos[0]);
-    }),
+    })
+      .then((body: any) => {
+        return resolve(body.objetos[0]);
+      })
+      .catch((error: any) => {
+        reject(error);
+      }),
   );
 }
 

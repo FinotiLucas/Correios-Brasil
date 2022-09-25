@@ -12,12 +12,14 @@ interface RequestOptions {
 }
 
 async function request(url: string, options: RequestOptions) {
-  try {
-    let res = await axios({ ...options, url: url });
-    let data = res.data;
-    return data;
-  } catch (error) {
-    return new Error(error.response);
-  }
+  return new Promise((resolve, reject) => {
+    axios({ ...options, url: url })
+      .then(response => {
+        return resolve(response);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 }
 export { request };

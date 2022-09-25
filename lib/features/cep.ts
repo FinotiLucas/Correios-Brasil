@@ -19,10 +19,13 @@ function consultarCep(cep: string): Promise<CepResponse> {
       headers: {
         'content-type': 'application/json',
       },
-    }).then(body => {
-      if (body.erro) reject(Error(`Cep: ${cep} não existe na nossa base`));
-      return resolve(body);
-    }),
+    })
+      .then((response: any) => {
+        return resolve(response);
+      })
+      .catch((error: any) => {
+        reject(error);
+      }),
   );
 }
 
