@@ -54,14 +54,14 @@ function fetchPrecoPrazo(p: PrecoPrazoRequest, code: string) {
       {
         method: 'GET',
         headers: {
-          'content-type': 'application/json',
+          'content-type': 'text/xml',
         },
         responseType: 'arraybuffer',
       },
     )
-      .then((arrayBuffer: ArrayBuffer) => {
+      .then((arrayBuffer: any) => {
         const rawJson = convertXMLStringToJson(
-          convertArrayBufferToString(arrayBuffer, 'iso-8859-1'),
+          convertArrayBufferToString(arrayBuffer.data, 'iso-8859-1'),
         );
         return resolve(
           convertJsonToPrazoPrecoResponse(rawJson.Servicos.cServico),

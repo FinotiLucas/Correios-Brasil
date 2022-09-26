@@ -1,4 +1,4 @@
-# Correios Brasil -- VERSÃO 3.0.1
+# Correios Brasil -- VERSÃO 3.0.2
 
 <h4  align="center">
 

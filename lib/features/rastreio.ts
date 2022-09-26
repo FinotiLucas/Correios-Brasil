@@ -26,7 +26,7 @@ function fetchTrackingService(code: string): Promise<any> {
       },
     })
       .then((body: any) => {
-        return resolve(body.objetos[0]);
+        return resolve(body.data.objetos[0]);
       })
       .catch((error: any) => {
         reject(error);
