@@ -5,6 +5,7 @@ import axios from 'axios';
 interface RequestOptions {
   method: 'GET' | 'POST';
   mode?: string;
+  data?: any;
   headers: any;
   timeout?: number | 0;
   agent?: http.Agent | https.Agent;
