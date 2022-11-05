@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 import { sanitization } from '../lib/utils/validation';
+import { rastrearEncomendas } from '../lib';
+
 import {
   convertArrayBufferToString,
   convertXMLStringToJson,
@@ -63,4 +65,17 @@ describe('Parsers', () => {
       return buf;
     }
   });*/
+});
+
+describe('Rastreio de Pacotes', function () {
+  // Timeout to 10s
+  this.timeout(10000);
+  it('Chama API de rastreio e retorna erros pré-definidos', async () => {
+    let response = await rastrearEncomendas(['BR123456789BR', 'AAAA']);
+    expect(response[0].mensagem).to.be.equals('SRO-020: Objeto não encontrado na base de dados dos Correios.');
+    expect(response[0].codObjeto).to.be.equals('BR123456789BR');
+
+    expect(response[1].mensagem).to.be.equals('SRO-019: Objeto inválido');
+    expect(response[1].codObjeto).to.be.equals('AAAA');
+  });
 });

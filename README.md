@@ -1,4 +1,4 @@
-# Correios Brasil -- VERSÃO 3.0.2
+# Correios Brasil -- VERSÃO 3.0.3
 
 <h4  align="center">
 
@@ -367,8 +367,8 @@ Copyright (c) 2020 Lucas Finoti
 
 ## 💪 Contribuidores
 
-| [<img src="https://avatars0.githubusercontent.com/u/42827195?v=3&s=115" width="115"><br><sub>@jonabf1</sub>](https://github.com/jonabf1) | [<img src="https://avatars0.githubusercontent.com/u/18602545?v=3&s=115" width="115"><br><sub>@francopan</sub>](https://github.com/francopan) |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<img src="https://avatars0.githubusercontent.com/u/42827195?v=3&s=115" width="115"><br><sub>@jonabf1</sub>](https://github.com/jonabf1) | [<img src="https://avatars0.githubusercontent.com/u/18602545?v=3&s=115" width="115"><br><sub>@francopan</sub>](https://github.com/francopan) | [<img src="https://avatars0.githubusercontent.com/u/3102127?v=3&s=115" width="115"><br><sub>@ivanseidel</sub>](https://github.com/ivanseidel) |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 🚀 Autor
 
