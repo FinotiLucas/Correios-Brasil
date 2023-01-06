@@ -27,24 +27,7 @@ export interface PrecoPrazoRequest {
   sCdAvisoRecebimento?: string;
   nIndicaCalculo?: string | number;
 }
-
-export interface PrecoPrazoEvent {
-  Codigo: string;
-  Valor: string;
-  PrazoEntrega: string;
-  ValorSemAdicionais: string;
-  ValorMaoPropria: string;
-  ValorAvisoRecebimento: string;
-  ValorDeclarado: string;
-  EntregaDomiciliar: string;
-  EntregaSabado: string;
-  obsFim: string;
-  Erro: string;
-  MsgErro: string;
-}
-
 export interface PrecoPrazoResponse {
-  [name: string]: {
     Codigo: string;
     Valor: string;
     PrazoEntrega: string;
@@ -57,7 +40,6 @@ export interface PrecoPrazoResponse {
     obsFim: string;
     Erro: string;
     MsgErro: string;
-  };
 }
 
 export interface RastreioEvent {
