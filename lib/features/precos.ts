@@ -8,12 +8,11 @@ import {
 import {
   PrecoPrazoRequest,
   PrecoPrazoResponse,
-  PrecoPrazoEvent,
 } from '../interfaces';
 
 function calcularPrecoPrazo(
   precoPrazo: PrecoPrazoRequest,
-): Promise<PrecoPrazoResponse> {
+): Promise<PrecoPrazoResponse[]> {
   /**
    * @param {Object} precoPrazo
    * Função responsável por realizar a consulta dos valores de entrega das
@@ -73,11 +72,11 @@ function fetchPrecoPrazo(p: PrecoPrazoRequest, code: string) {
   });
 }
 
-function convertJsonToPrazoPrecoResponse(obj: any): PrecoPrazoEvent {
+function convertJsonToPrazoPrecoResponse(obj: any): PrecoPrazoResponse {
   const precoPrazoResponse = Object.keys(obj).reduce((acc: any, key) => {
     acc[key] = obj[key]._text ? obj[key]._text : obj[key]._cdata;
     return acc;
-  }, {} as PrecoPrazoEvent);
+  }, {} as PrecoPrazoResponse);
   return precoPrazoResponse;
 }
 
