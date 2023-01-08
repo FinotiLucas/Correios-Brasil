@@ -21,7 +21,7 @@ function consultarCep(cep: string): Promise<CepResponse> {
       },
     })
       .then((response: any) => {
-        return resolve(response);
+        return resolve(response.data);
       })
       .catch((error: any) => {
         reject(error);
