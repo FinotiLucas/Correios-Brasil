@@ -2,7 +2,9 @@ import { request } from '../utils/request';
 import URL from '../utils/URL';
 
 // Token Constante da requisição de PROXYAPP_RASTREAR
-const REQUEST_TOKEN = 'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ='
+const REQUEST_TOKEN = "YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=";
+const REQUEST_DATE = "03/07/2023 10:41:01";
+const REQUEST_SIGN = "cf4a07e47acd666f85dbddc11efd35cf";
 
 // Guarda o token em cache e a data de expiração
 let tokenValue: string = null;
@@ -42,12 +44,12 @@ function gerarTokenApp(): Promise<string> {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'user-agent': 'Dart/2.18 (dart:io)',
+        'user-agent': 'Dart/3.0 (dart:io)',
       },
       data: {
         requestToken: REQUEST_TOKEN,
-        data: "23/06/2023 12:42:58",
-        sign: "a5e2f3a83571c88c40a31c68876f261f"
+        data: REQUEST_DATE,
+        sign: REQUEST_SIGN,
       }
     })
     .then((body: any) => {
