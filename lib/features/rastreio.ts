@@ -1,8 +1,21 @@
 import { request } from '../utils/request';
 import URL from '../utils/URL';
+import crypto from 'crypto-js';
+
+const currentDate = new Date();
+const day = String(currentDate.getDate()).padStart(2, "0");
+const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+const year = String(currentDate.getFullYear());
+const hours = String(currentDate.getHours()).padStart(2, "0");
+const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+const seconds = String(currentDate.getSeconds()).padStart(2, "0");
 
 // Token Constante da requisição de PROXYAPP_RASTREAR
 const REQUEST_TOKEN = 'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ='
+const REQUEST_DATA = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+const REQUEST_SIGN = crypto.createHash('md5')
+.update(`requestToken${token}data${data}`)
+.digest('hex');
 
 // Guarda o token em cache e a data de expiração
 let tokenValue: string = null;
@@ -46,8 +59,8 @@ function gerarTokenApp(): Promise<string> {
       },
       data: {
         requestToken: REQUEST_TOKEN,
-        data: "23/06/2023 12:42:58",
-        sign: "a5e2f3a83571c88c40a31c68876f261f"
+        data: REQUEST_DATA,
+        sign: REQUEST_SIGN
       }
     })
     .then((body: any) => {
