@@ -1,10 +1,18 @@
 import { request } from '../utils/request';
 import URL from '../utils/URL';
+import crypto from 'crypto-js';
+import moment from 'moment-timezone';
 
-// Token Constante da requisição de PROXYAPP_RASTREAR
+// implementado correção, com o exemplo da issue #53
+// https://github.com/FinotiLucas/Correios-Brasil/issues/53
+
 const REQUEST_TOKEN = "YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=";
-const REQUEST_DATE = "03/07/2023 10:41:01";
-const REQUEST_SIGN = "cf4a07e47acd666f85dbddc11efd35cf";
+const REQUEST_DATE = moment().tz('America/Sao_Paulo').format('DD/MM/YYYY HH:mm:ss');
+
+const REQUEST_SIGN = crypto
+  .createHash('md5')
+  .update(`requestToken${token}data${data}`)
+  .digest('hex');
 
 // Guarda o token em cache e a data de expiração
 let tokenValue: string = null;
