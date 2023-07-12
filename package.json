@@ -1,6 +1,6 @@
 {
   "name": "correios-brasil",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Módulo completo consultar informações sobre o CEP, calcular o preço e os prazos das entregas das encomendas e também realizar o seu rastreio",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -78,8 +78,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.4",
-    "crypto-js": "^4.1.1"
+    "typescript": "^4.9.4"
   },
   "types": "dist/index.d.js"
 }
