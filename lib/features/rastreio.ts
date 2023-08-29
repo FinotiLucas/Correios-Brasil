@@ -11,13 +11,13 @@ const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
 // Token Constante da requisição de PROXYAPP_RASTREAR
-const REQUEST_TOKEN =
-  'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=';
-const REQUEST_DATA = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-const REQUEST_SIGN = crypto
-  .createHash('md5')
-  .update(`requestToken${REQUEST_TOKEN}data${REQUEST_DATA}`)
-  .digest('hex');
+const REQUEST_TOKEN = "rPgi596V7vNHkEJwJA0eW30hUeJNqvKcHVdhfcX3CDuNCFu3KT5XgkbDf2iFc/g7nuGbFx4bNOBUEieF0k+jICMcWRN+ug0asYGwMM511vBzfbLotGy6IR5Ya0jUjx+N/EAhJM3jjxYUudPZLWIdwoL/B23mPvbQEXAyWcEAxHS7JUOgC9p/Zj/RHXtF9W3iK1TfRdk1CjNP5UmwUdGWwawgvfPY7Fof9nPrHMz/MkeYn0/PSemHHhJ3TdHCFc0h/MrWDSjsTtznZbpQcZZL4rAes9vOoN8SWJgyLmK21qXeErdB1OljK/VYbBvTfTzEcoOWM3/4Z3jGPyxM+a77Mg=="
+// 'YW5kcm9pZDtici5jb20uY29ycmVpb3MucHJlYXRlbmRpbWVudG87RjMyRTI5OTc2NzA5MzU5ODU5RTBCOTdGNkY4QTQ4M0I5Qjk1MzU3ODs1LjEuMTQ=';
+// const REQUEST_DATA = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+// const REQUEST_SIGN = crypto
+//   .createHash('md5')
+//   .update(`requestToken${REQUEST_TOKEN}data${REQUEST_DATA}`)
+//   .digest('hex');
 
 // Guarda o token em cache e a data de expiração
 let tokenValue: string = null;
@@ -60,9 +60,9 @@ function gerarTokenApp(): Promise<string> {
         'user-agent': 'Dart/2.18 (dart:io)',
       },
       data: {
-        requestToken: REQUEST_TOKEN,
-        data: REQUEST_DATA,
-        sign: REQUEST_SIGN,
+        requestToken: REQUEST_TOKEN
+        // data: REQUEST_DATA,
+        // sign: REQUEST_SIGN,
       },
     })
       .then((body: any) => {
