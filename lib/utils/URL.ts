@@ -4,7 +4,7 @@ enum URL {
   BASERASTREIO = 'https://www.linkcorreios.com.br',
   WIDENET = 'https://cep.widenet.host/busca-cep/api/cep',
   PROXYAPP_RASTREAR = 'https://proxyapp.correios.com.br/v1/sro-rastro',
-  PROXYAPP_TOKEN = 'https://proxyapp.correios.com.br/v2/app-validation',
+  PROXYAPP_TOKEN = 'https://proxyapp.correios.com.br/v3/app-validation',
 }
 
 export default URL;
