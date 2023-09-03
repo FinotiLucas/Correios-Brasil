@@ -21,6 +21,11 @@ function consultarCep(cep: string): Promise<CepResponse> {
       },
     })
       .then((response: any) => {
+
+        if (response.data.erro === true) {
+          throw new Error("Cep não encontrado!")
+        }
+        
         return resolve(response.data);
       })
       .catch((error: any) => {
